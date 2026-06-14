@@ -1,0 +1,33 @@
+declare module "vanilla-tilt" {
+  interface TiltOptions {
+    reverse?: boolean;
+    max?: number;
+    startX?: number;
+    startY?: number;
+    perspective?: number;
+    scale?: number;
+    speed?: number;
+    transition?: boolean;
+    axis?: "x" | "y" | null;
+    reset?: boolean;
+    "reset-to-start"?: boolean;
+    easing?: string;
+    glare?: boolean;
+    "max-glare"?: number;
+    "glare-prerender"?: boolean;
+    "mouse-event-element"?: string | null;
+    "full-page-listening"?: boolean;
+    gyroscope?: boolean;
+    gyroscopeMinAngleX?: number;
+    gyroscopeMaxAngleX?: number;
+    gyroscopeMinAngleY?: number;
+    gyroscopeMaxAngleY?: number;
+    gyroscopeSamples?: number;
+  }
+
+  const VanillaTilt: {
+    init(element: HTMLElement | HTMLElement[], options?: TiltOptions): void;
+  };
+
+  export default VanillaTilt;
+}
