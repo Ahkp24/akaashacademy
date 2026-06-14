@@ -16,7 +16,6 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/sat" element={<SAT />} />
             <Route path="/act" element={<ACT />} />
-            <Route path="/arena" element={<Arena />} />
             <Route path="/about" element={<About />} />
           </Routes>
         </div>
