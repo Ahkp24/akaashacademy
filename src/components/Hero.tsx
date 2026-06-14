@@ -1,86 +1,38 @@
-import { useEffect, useRef } from "react";
-import { cn } from "../lib/utils";
+import React from "react";
+import { Link } from "react-router-dom";
 
 interface HeroProps {
-  eyebrow?: string;
   title: string;
-  accent?: string;
-  subtitle?: string;
-  cta?: { label: string; href: string };
-  className?: string;
+  subtitle: string;
+  ctaText: string;
+  ctaLink: string;
 }
 
-export default function Hero({
-  eyebrow,
-  title,
-  accent,
-  subtitle,
-  cta,
-  className,
-}: HeroProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const titleParts = accent ? title.split(accent) : [title];
-
-  useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
-    // Staggered entrance
-    el.style.opacity = "0";
-    el.style.transform = "translateY(24px)";
-    requestAnimationFrame(() => {
-      el.style.transition = "opacity 0.9s ease, transform 0.9s ease";
-      el.style.opacity = "1";
-      el.style.transform = "translateY(0)";
-    });
-  }, []);
-
+const Hero: React.FC<HeroProps> = ({ title, subtitle, ctaText, ctaLink }) => {
   return (
-    <section
-      className={cn(
-        "relative min-h-screen flex flex-col justify-center px-6 lg:px-12",
-        className
-      )}
-    >
-      {/* Noise texture overlay */}
-      <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-[0.03] pointer-events-none" />
-
-      {/* Red glow — cinematic accent */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-red-DEFAULT/5 rounded-full blur-[120px] pointer-events-none" />
-
-      <div ref={containerRef} className="relative z-10 max-w-7xl mx-auto w-full">
-        {eyebrow && (
-          <span className="font-heading text-sm tracking-[0.3em] text-red-DEFAULT block mb-6">
-            {eyebrow}
-          </span>
-        )}
-
-        <h1 className="font-heading text-[clamp(4rem,12vw,10rem)] leading-none text-white mb-6">
-          {accent ? (
-            <>
-              {titleParts[0]}
-              <span className="text-red-DEFAULT">{accent}</span>
-              {titleParts[1]}
-            </>
-          ) : (
-            title
-          )}
+    <section className="relative min-h-[80vh] flex flex-col items-center justify-center text-center px-6 bg-black border-b border-white/10">
+      {/* Visual background placeholder for particles */}
+      <div className="absolute inset-0 bg-radial-glow opacity-20 pointer-events-none" />
+      
+      <div className="relative z-10 max-w-4xl mx-auto">
+        <h1 className="font-['Bebas_Neue'] text-6xl md:text-8xl tracking-wide mb-6 text-white leading-none">
+          {title.split("GUESSWORK")[0]}
+          <span className="text-[#FF0000]">GUESSWORK</span>
         </h1>
-
-        {subtitle && (
-          <p className="font-body text-base lg:text-lg text-white/50 max-w-xl mb-10 leading-relaxed">
-            {subtitle}
-          </p>
-        )}
-
-        {cta && (
-          <a
-            href={cta.href}
-            className="inline-block font-body text-sm font-medium px-8 py-4 bg-red-DEFAULT text-white tracking-wider hover:bg-white hover:text-black transition-all duration-300"
-          >
-            {cta.label}
-          </a>
-        )}
+        
+        <p className="font-['DM_Sans'] text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed">
+          {subtitle}
+        </p>
+        
+        <Link 
+          to={ctaLink} 
+          className="inline-block font-['Bebas_Neue'] text-lg tracking-[0.2em] px-10 py-4 border-2 border-[#FF0000] text-white hover:bg-[#FF0000] transition-colors duration-300"
+        >
+          {ctaText}
+        </Link>
       </div>
     </section>
   );
-}
+};
+
+export default Hero;
