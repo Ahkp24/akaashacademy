@@ -4,7 +4,6 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import SAT from "./pages/SAT";
 import ACT from "./pages/ACT";
-import Arena from "./pages/Arena";
 import About from "./pages/About";
 
 export default function App() {
