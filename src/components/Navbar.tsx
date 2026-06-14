@@ -6,7 +6,6 @@ const links = [
   { label: "Home", to: "/" },
   { label: "SAT", to: "/sat" },
   { label: "ACT", to: "/act" },
-  { label: "Akaash Arena", to: "/arena" },
   { label: "About", to: "/about" },
 ];
 
