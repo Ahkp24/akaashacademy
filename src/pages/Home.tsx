@@ -62,12 +62,6 @@ const subjects: SubjectItem[] = [
       "Pattern-based pacing and technique for every ACT section, engineered to beat the clock.",
     link: "/act",
   },
-  {
-    title: "Akaash Arena",
-    description:
-      "Compete head-to-head, track your growth, and turn practice into a competitive edge.",
-    link: "/arena",
-  },
 ];
 
 const resources: ResourceItem[] = [
