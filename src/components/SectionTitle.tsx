@@ -1,4 +1,5 @@
 import React from "react";
+import ScrollReveal from "./ScrollReveal";
 
 interface SectionTitleProps {
   title: string;
@@ -7,16 +8,19 @@ interface SectionTitleProps {
 
 const SectionTitle: React.FC<SectionTitleProps> = ({ title, subtitle }) => {
   return (
-    <div className="text-left max-w-3xl">
-      <h2 className="font-['Bebas_Neue'] text-4xl md:text-6xl tracking-wide text-white mb-3">
-        {title}
-      </h2>
-      {subtitle && (
-        <p className="font-['DM_Sans'] text-base md:text-lg text-white/50 leading-relaxed">
-          {subtitle}
-        </p>
-      )}
-    </div>
+    <ScrollReveal>
+      <div className="text-left max-w-3xl">
+        {/* ADDED: glitch-text class */}
+        <h2 className="font-['Bebas_Neue'] text-4xl md:text-6xl tracking-wide text-white mb-3 glitch-text cursor-default">
+          {title}
+        </h2>
+        {subtitle && (
+          <p className="font-['DM_Sans'] text-base md:text-lg text-white/50 leading-relaxed">
+            {subtitle}
+          </p>
+        )}
+      </div>
+    </ScrollReveal>
   );
 };
 
