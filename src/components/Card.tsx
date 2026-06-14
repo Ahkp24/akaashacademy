@@ -1,6 +1,6 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { useTilt } from "../hooks/useTilt"; // Hooks up your custom tilt mechanics
+import VanillaTilt from "vanilla-tilt";
 
 interface CardProps {
   title: string;
@@ -12,8 +12,24 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ title, description, number, link }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   
-  // Activate your cinematic hover tilt effect
-  useTilt(cardRef);
+  // Directly initialize the hover tilt effect to avoid internal custom hook typing issues
+  useEffect(() => {
+    const cardElement = cardRef.current;
+    if (cardElement) {
+      VanillaTilt.init(cardElement, {
+        max: 10,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.1,
+      });
+    }
+    return () => {
+      // Clean up when the card unmounts
+      if (cardElement && (cardElement as any).vanillaTilt) {
+        (cardElement as any).vanillaTilt.destroy();
+      }
+    };
+  }, []);
 
   // The actual card design layer
   const CardContent = () => (
@@ -22,7 +38,7 @@ const Card: React.FC<CardProps> = ({ title, description, number, link }) => {
       className="relative p-8 bg-[#09090b] border border-white/10 hover:border-[#FF0000] transition-colors duration-300 h-full flex flex-col justify-between group"
     >
       {/* Subtle red corner accent light that shows up on hover */}
-      <div className="absolute top-0 right-0 w-0 h-0 border-t-2 border-r-2 border-transparent group-hover:border-[#FF0000] transition-all duration-300 w-4 h-4" />
+      <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-transparent group-hover:border-[#FF0000] transition-all duration-300" />
       
       <div>
         {/* If a number exists (like "01"), render it in Bebas Neue */}
@@ -53,7 +69,7 @@ const Card: React.FC<CardProps> = ({ title, description, number, link }) => {
   // If the card has a link parameter, wrap it in a React Router Link tag. Otherwise, just show a standard box.
   if (link) {
     return (
-      <Link to={link} className="block h-full cursor-pointer">
+      <Link to={link} className="block h-full cursor-pointer no-underline">
         <CardContent />
       </Link>
     );
