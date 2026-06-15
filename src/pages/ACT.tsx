@@ -288,7 +288,6 @@ const ACT: React.FC = () => {
         </a>
       </section>
 
-      <Footer />
     </div>
   );
 };
