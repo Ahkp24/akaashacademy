@@ -17,8 +17,8 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle, ctaText, ctaLink }) => {
       <div className="relative z-10 max-w-4xl mx-auto">
         {/* ADDED: glitch-text class */}
         <h1 className="font-['Bebas_Neue'] text-6xl md:text-8xl tracking-wide mb-6 text-white leading-none glitch-text cursor-default">
-          {title.split("GUESSWORK")[0]}
-          {title.includes("GUESSWORK") && <span className="text-[#FF0000]">GUESSWORK</span>}
+          {title.split("STICK")[0]}
+          {title.includes("STICK") && <span className="text-[#FF0000]">STICK</span>}
         </h1>
         
         <p className="font-['DM_Sans'] text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed">
