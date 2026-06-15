@@ -128,7 +128,6 @@ const About: React.FC = () => {
         </a>
       </section>
 
-      <Footer />
     </div>
   );
 };
