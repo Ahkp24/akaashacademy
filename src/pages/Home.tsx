@@ -88,7 +88,7 @@ const Home = () => {
       <Navbar />
 
       <Hero
-        title="STRATEGY OVER GUESSWORK"
+        title="LEARN IT QUICK, MAKE IT STICK"
         subtitle="Master SAT and ACT patterns through efficient strategies."
         ctaText="Start Improving"
         ctaLink="/sat"
