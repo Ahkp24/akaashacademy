@@ -184,7 +184,6 @@ const SAT = () => {
         </a>
       </section>
 
-      <Footer />
     </div>
   );
 };
