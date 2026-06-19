@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "../lib/utils";
 
+// UPDATED: Changed the labels to match the new unified hubs
 const links = [
   { label: "Home", to: "/" },
-  { label: "SAT", to: "/sat" },
-  { label: "ACT", to: "/act" },
+  { label: "Reading / Writing", to: "/sat" },
+  { label: "Math Hub", to: "/act" },
   { label: "About", to: "/about" },
 ];
 
