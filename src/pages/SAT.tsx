@@ -15,7 +15,6 @@ interface SubSection {
   items: ReelItem[];
 }
 
-// Helper function to easily generate "Coming Soon" placeholders
 const createPlaceholder = (topic: string): ReelItem[] => [
   {
     title: topic,
@@ -25,104 +24,24 @@ const createPlaceholder = (topic: string): ReelItem[] => [
   }
 ];
 
-// 1. THE 16 UNIVERSAL GRAMMAR RULES (Your completed reels!)
+// 1. THE 16 UNIVERSAL GRAMMAR RULES
 const universalGrammarReels: ReelItem[] = [
-  {
-    title: "Clauses",
-    description: "What makes up a sentence?",
-    duration: "0:27",
-    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZYGEKXgrwr/",
-  },
-  {
-    title: "Boundaries",
-    description: "Know exactly what the SAT and ACT tests.",
-    duration: "0:37",
-    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZYNunAgJkJ/",
-  },
-  {
-    title: "Boundary Errors",
-    description: "Traps and Tricks the SAT and ACT always try to pull.",
-    duration: "0:28",
-    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZY7sVTsUEY/",
-  },
-  {
-    title: "PUNCTUATION: Semicolons & Periods",
-    description: "What makes a sentence done?",
-    duration: "0:33",
-    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZaQsweRXj6/",
-  },
-  {
-    title: "PUNCTUATION: Colons",
-    description: "The easiest punctuation on the SAT and ACT.",
-    duration: "0:29",
-    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZaW-lBRdKU/",
-  },
-  {
-    title: "PUNCTATION: Dashes",
-    description: "You never use these, but the SAT and ACT LOVE them.",
-    duration: "0:37",
-    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZbJ51KMSWD/",
-  },
-  {
-    title: "FANBOYS",
-    description: "Is that Drake?",
-    duration: "0:28",
-    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZcuf5hxVlC/",
-  },
-  {
-    title: "Subordinating Conjunctions",
-    description: "The ultimate TRICK the SAT and ACT pull that's really easy to see through.",
-    duration: "0:41",
-    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZdVr_CgTkS/",
-  },
-  {
-    title: "PUNCTUATION: Commas",
-    description: "A rapid-fire overview of when to use and not use commas.",
-    duration: "0:21",
-    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZdaMnags6s/",
-  },
-  {
-    title: "Appositives",
-    description: "Michael Jackson can help you with a rare rule for the SAT and ACT.",
-    duration: "0:56",
-    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZd6QcNMK7z/",
-  },
-  {
-    title: "Modifiers",
-    description: "What sounds right isn't always right.",
-    duration: "0:42",
-    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZeD6Mds-AK/",
-  },
-  {
-    title: "Agreement",
-    description: "THE ULTIMATE GRAMMAR TRICK STOPPING YOU FROM A 1600!",
-    duration: "0:60",
-    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZfbAT4xzJn/",
-  },
-  {
-    title: "Possession",
-    description: "Who owns what and why?",
-    duration: "0:60",
-    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZfjG3pRmOw/",
-  },
-  {
-    title: "Consistency",
-    description: "Learn what the SAT and ACT love and hate to see.",
-    duration: "0:42",
-    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZf-rr_ABqm/",
-  },
-  {
-    title: "Parallelism",
-    description: "Another rare rule that keeps people from breaking past the 600s.",
-    duration: "0:27",
-    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZgVotQMCP2/",
-  },
-  {
-    title: "Logic",
-    description: "What makes a sentence make sense?",
-    duration: "0:41",
-    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZgdX8YsPmE/",
-  },
+  { title: "Clauses", description: "What makes up a sentence?", duration: "0:27", reelUrl: "https://www.instagram.com/akaashacademy/reel/DZYGEKXgrwr/" },
+  { title: "Boundaries", description: "Know exactly what the SAT and ACT tests.", duration: "0:37", reelUrl: "https://www.instagram.com/akaashacademy/reel/DZYNunAgJkJ/" },
+  { title: "Boundary Errors", description: "Traps and Tricks the SAT and ACT always try to pull.", duration: "0:28", reelUrl: "https://www.instagram.com/akaashacademy/reel/DZY7sVTsUEY/" },
+  { title: "PUNCTUATION: Semicolons & Periods", description: "What makes a sentence done?", duration: "0:33", reelUrl: "https://www.instagram.com/akaashacademy/reel/DZaQsweRXj6/" },
+  { title: "PUNCTUATION: Colons", description: "The easiest punctuation on the SAT and ACT.", duration: "0:29", reelUrl: "https://www.instagram.com/akaashacademy/reel/DZaW-lBRdKU/" },
+  { title: "PUNCTATION: Dashes", description: "You never use these, but the SAT and ACT LOVE them.", duration: "0:37", reelUrl: "https://www.instagram.com/akaashacademy/reel/DZbJ51KMSWD/" },
+  { title: "FANBOYS", description: "Is that Drake?", duration: "0:28", reelUrl: "https://www.instagram.com/akaashacademy/reel/DZcuf5hxVlC/" },
+  { title: "Subordinating Conjunctions", description: "The ultimate TRICK the SAT and ACT pull that's really easy to see through.", duration: "0:41", reelUrl: "https://www.instagram.com/akaashacademy/reel/DZdVr_CgTkS/" },
+  { title: "PUNCTUATION: Commas", description: "A rapid-fire overview of when to use and not use commas.", duration: "0:21", reelUrl: "https://www.instagram.com/akaashacademy/reel/DZdaMnags6s/" },
+  { title: "Appositives", description: "Michael Jackson can help you with a rare rule for the SAT and ACT.", duration: "0:56", reelUrl: "https://www.instagram.com/akaashacademy/reel/DZd6QcNMK7z/" },
+  { title: "Modifiers", description: "What sounds right isn't always right.", duration: "0:42", reelUrl: "https://www.instagram.com/akaashacademy/reel/DZeD6Mds-AK/" },
+  { title: "Agreement", description: "THE ULTIMATE GRAMMAR TRICK STOPPING YOU FROM A 1600!", duration: "0:60", reelUrl: "https://www.instagram.com/akaashacademy/reel/DZfbAT4xzJn/" },
+  { title: "Possession", description: "Who owns what and why?", duration: "0:60", reelUrl: "https://www.instagram.com/akaashacademy/reel/DZfjG3pRmOw/" },
+  { title: "Consistency", description: "Learn what the SAT and ACT love and hate to see.", duration: "0:42", reelUrl: "https://www.instagram.com/akaashacademy/reel/DZf-rr_ABqm/" },
+  { title: "Parallelism", description: "Another rare rule that keeps people from breaking past the 600s.", duration: "0:27", reelUrl: "https://www.instagram.com/akaashacademy/reel/DZgVotQMCP2/" },
+  { title: "Logic", description: "What makes a sentence make sense?", duration: "0:41", reelUrl: "https://www.instagram.com/akaashacademy/reel/DZgdX8YsPmE/" },
 ];
 
 // 2. READING SUB-SECTIONS (Coming Soon)
@@ -135,19 +54,6 @@ const readingSections: SubSection[] = [
   { id: "words-context", title: "Words in Context", items: createPlaceholder("Words in Context") },
   { id: "rhetorical-synthesis", title: "Rhetorical Synthesis", items: createPlaceholder("Rhetorical Synthesis") },
   { id: "transitions", title: "Transitions", items: createPlaceholder("Transitions") },
-];
-
-// 3. MATH SUB-SECTIONS (Coming Soon)
-const mathSections: SubSection[] = [
-  { id: "algebra-core", title: "Algebra Core", items: createPlaceholder("Algebra Core") },
-  { id: "advanced-algebra", title: "Advanced Algebra", items: createPlaceholder("Advanced Algebra") },
-  { id: "problem-solving", title: "Problem Solving & Data", items: createPlaceholder("Problem Solving & Data Analysis") },
-  { id: "geometry", title: "Geometry", items: createPlaceholder("Geometry") },
-];
-
-// 4. TRAPS SUB-SECTION (Coming Soon)
-const trapSections: SubSection[] = [
-  { id: "deconstructing-traps", title: "Deconstructing Traps", items: createPlaceholder("Testmaker Traps") },
 ];
 
 interface ReelCardProps {
@@ -193,10 +99,10 @@ const SAT = () => {
           {/* Left Side: Context */}
           <div>
             <h1 className="font-['Bebas_Neue'] text-5xl md:text-8xl tracking-wide mb-6">
-              SAT REEL STRATEGIES
+              READING & WRITING
             </h1>
             <p className="font-['DM_Sans'] text-lg md:text-xl text-white/70 leading-relaxed max-w-lg">
-              The SAT rewards pattern recognition, not memorization. Click any strategy below to master the pattern on Instagram.
+              The verbal sections reward pattern recognition, not "feeling" the right answer. Click any strategy below to master the logic.
             </p>
           </div>
 
@@ -230,22 +136,6 @@ const SAT = () => {
                   ))}
                 </ul>
               </div>
-
-              {/* TOC 3: Math */}
-              <div>
-                <span className="font-['Bebas_Neue'] text-2xl text-white block mb-3">
-                  » 03. MATH HUB
-                </span>
-                <ul className="text-sm text-white/70 pl-6 grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-2 list-none">
-                  {mathSections.map((section) => (
-                    <li key={section.id}>
-                      <a href={`#${section.id}`} className="hover:text-[#FF0000] transition-colors flex items-center gap-2">
-                        <span className="text-[#FF0000] text-xs">▹</span> {section.title}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </div>
           </div>
 
@@ -265,7 +155,7 @@ const SAT = () => {
       </section>
 
       {/* Reading Sub-sections */}
-      <section className="px-6 md:px-16 py-24 bg-white/[0.02] border-b border-white/10">
+      <section id="reading" className="px-6 md:px-16 py-24 bg-white/[0.02] border-b border-white/10 scroll-mt-20">
         <div className="mb-16">
           <SectionTitle title="READING LOGIC HUB" subtitle="Stop relying on 'feeling' the right answer. Master these specific passage types." />
         </div>
@@ -275,42 +165,6 @@ const SAT = () => {
             <div key={section.id} id={section.id} className="scroll-mt-24">
               <h3 className="font-['Bebas_Neue'] text-3xl text-white mb-6 border-l-4 border-[#FF0000] pl-4">{section.title}</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {section.items.map((reel) => (
-                  <ReelCard key={reel.title} reel={reel} />
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Math Sub-sections */}
-      <section className="px-6 md:px-16 py-24 border-b border-white/10">
-        <div className="mb-16">
-          <SectionTitle title="MATH HUB" subtitle="From algebra fundamentals to data analysis — strategy over raw computation." />
-        </div>
-
-        <div className="space-y-24">
-          {mathSections.map((section) => (
-            <div key={section.id} id={section.id} className="scroll-mt-24">
-              <h3 className="font-['Bebas_Neue'] text-3xl text-white mb-6 border-l-4 border-[#FF0000] pl-4">{section.title}</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {section.items.map((reel) => (
-                  <ReelCard key={reel.title} reel={reel} />
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Traps Sub-sections */}
-      <section className="px-6 md:px-16 py-24 bg-white/[0.02] border-b border-white/10">
-        <div className="space-y-24">
-          {trapSections.map((section) => (
-            <div key={section.id} id={section.id} className="scroll-mt-24">
-              <SectionTitle title={section.title} subtitle="Learn how the SAT disguises wrong answers — and how to spot every trick." />
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
                 {section.items.map((reel) => (
                   <ReelCard key={reel.title} reel={reel} />
                 ))}
