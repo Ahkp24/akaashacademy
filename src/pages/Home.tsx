@@ -25,27 +25,27 @@ interface ResourceItem {
 const approachSteps: ApproachStep[] = [
   {
     number: "01",
-    title: "Identify the Pattern",
+    title: "Understand the Content",
     description:
-      "Every question on the SAT and ACT follows a structure the testmakers reuse again and again. We train you to recognize it on sight.",
+      "Bite-size videos easily explain rules and methods to solve questions.",
   },
   {
     number: "02",
-    title: "Apply the Strategy",
+    title: "Notice the Pattern",
     description:
-      "Once the pattern is clear, a specific, proven strategy takes over — built for speed, accuracy, and consistency under timed conditions.",
+      "You know what to do now and how to apply content onto the context of the question.",
   },
   {
     number: "03",
-    title: "Eliminate Confusion",
+    title: "Avoid Traps",
     description:
-      "We strip away the tricks, traps, and overcomplicated explanations that waste your time and shake your confidence.",
+      "You easily learn common tricks the tests pull on you and how to avoid them.",
   },
   {
     number: "04",
     title: "Improve Your Score",
     description:
-      "The result isn't luck. It's a measurable, repeatable jump in score, backed by a system that works every time.",
+      "By the end of just a few small videos and practice questions, your scores can do nothing but improve.",
   },
 ];
 
@@ -53,32 +53,32 @@ const subjects: SubjectItem[] = [
   {
     title: "SAT",
     description:
-      "Strategy-driven prep across Reading, Writing & Language, and Math — built for the digital SAT format.",
+      "Understanding content & applying strategy define every high SAT score. Learn those here.",
     link: "/sat",
   },
   {
     title: "ACT",
     description:
-      "Pattern-based pacing and technique for every ACT section, engineered to beat the clock.",
+      "The ACT is built on patterns that are easily broken down here.",
     link: "/act",
   },
 ];
 
 const resources: ResourceItem[] = [
   {
-    title: "SAT Grammar Rules",
+    title: "Grammar",
     description:
-      "The handful of grammar rules that show up on nearly every SAT, broken down simply.",
+      "Break down every grammar rule in about 10 minutes with our reels.",
   },
   {
-    title: "Reading Traps",
+    title: "Traps",
     description:
-      "Learn to spot the wrong-answer traps testmakers hide inside reading passages.",
+      "Learn to spot the wrong-answer traps testmakers hide..",
   },
   {
-    title: "Math Strategies",
+    title: "Tips",
     description:
-      "Shortcuts and techniques that cut solve-time without sacrificing accuracy.",
+      "Shortcuts and techniques to save you time and guarantee a high score.",
   },
 ];
 
@@ -114,10 +114,9 @@ const Home = () => {
               THE AKAASH <span className="text-[#FF0000]">DIFFERENCE</span>
             </h3>
             <p className="font-['DM_Sans'] text-lg md:text-xl text-white/80 leading-relaxed">
-              Standard prep treats these as academic tests. We treat them as a
-              baseline to improve — fast, and without the guesswork. Sitting
-              at the average won't help many students get into the colleges
-              they're aiming for.
+              Most standard prep treats these tests as academic and wants you to match or go above that baseline. 
+              But we want you to not only go above the average, but absolutely demolish it with
+              thorough understanding and tips that will remain with you every time you take a test.
             </p>
           </div>
         </div>
@@ -127,7 +126,7 @@ const Home = () => {
       <section className="px-6 md:px-16 py-24">
         <SectionTitle
           title="THE AKAASH APPROACH"
-          subtitle="A repeatable system, not a guessing game."
+          subtitle="Focused on content and EDUCATED tips, not guessing."
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
           {approachSteps.map((step) => (
@@ -163,7 +162,7 @@ const Home = () => {
       <section className="px-6 md:px-16 py-24">
         <SectionTitle
           title="FREE RESOURCES"
-          subtitle="Start building your edge today, at no cost."
+          subtitle="Akaash Academy's key to success will remain free forever, unlike other prep resources."
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
           {resources.map((resource) => (
@@ -182,8 +181,7 @@ const Home = () => {
           READY TO <span className="text-[#FF0000]">IMPROVE</span>?
         </h2>
         <p className="font-['DM_Sans'] text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10">
-          Join Akaash Academy and start replacing guesswork with strategy
-          today.
+          Join Akaash Academy and get your scores up today!
         </p>
         <Link
           to="/sat"
