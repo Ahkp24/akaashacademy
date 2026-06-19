@@ -9,7 +9,23 @@ interface ReelItem {
   reelUrl: string;
 }
 
-// 1. THE 16 UNIVERSAL GRAMMAR RULES (Copy-paste this array to ACT.tsx too)
+interface SubSection {
+  id: string;
+  title: string;
+  items: ReelItem[];
+}
+
+// Helper function to easily generate "Coming Soon" placeholders
+const createPlaceholder = (topic: string): ReelItem[] => [
+  {
+    title: topic,
+    description: `The strategic framework for ${topic}. Video dropping soon. Follow @akaashacademy to stay updated on our latest strategy drops.`,
+    duration: "COMING SOON",
+    reelUrl: "https://www.instagram.com/akaashacademy/",
+  }
+];
+
+// 1. THE 16 UNIVERSAL GRAMMAR RULES (Your completed reels!)
 const universalGrammarReels: ReelItem[] = [
   {
     title: "Clauses",
@@ -109,74 +125,29 @@ const universalGrammarReels: ReelItem[] = [
   },
 ];
 
-// 2. THE READING HUB (Grammar removed, purely reading logic now)
-const readingReels: ReelItem[] = [
-  {
-    title: "Transitions",
-    description: "Master the logic words that connect ideas — and learn how the SAT tests whether you actually understand the relationship between sentences.",
-    duration: "0:38",
-    reelUrl: "https://www.instagram.com/reel/CXXXXXXXXXX2/",
-  },
-  {
-    title: "Evidence Questions",
-    description: "Stop guessing which line supports the answer. Use a simple elimination strategy to lock in evidence-based reading questions.",
-    duration: "0:52",
-    reelUrl: "https://www.instagram.com/reel/CXXXXXXXXXX3/",
-  },
-  {
-    title: "Vocabulary in Context",
-    description: "The SAT doesn't test obscure words anymore — it tests context. Here's how to nail vocab-in-context questions every time.",
-    duration: "0:36",
-    reelUrl: "https://www.instagram.com/reel/CXXXXXXXXXX5/",
-  },
+// 2. READING SUB-SECTIONS (Coming Soon)
+const readingSections: SubSection[] = [
+  { id: "central-ideas", title: "Central Ideas & Details", items: createPlaceholder("Central Ideas & Details") },
+  { id: "command-evidence", title: "Command of Evidence", items: createPlaceholder("Command of Evidence") },
+  { id: "inferences", title: "Inferences", items: createPlaceholder("Inferences") },
+  { id: "cross-text", title: "Cross-Text Connections", items: createPlaceholder("Cross-Text Connections") },
+  { id: "text-structure", title: "Text Structure & Purpose", items: createPlaceholder("Text Structure & Purpose") },
+  { id: "words-context", title: "Words in Context", items: createPlaceholder("Words in Context") },
+  { id: "rhetorical-synthesis", title: "Rhetorical Synthesis", items: createPlaceholder("Rhetorical Synthesis") },
+  { id: "transitions", title: "Transitions", items: createPlaceholder("Transitions") },
 ];
 
-const mathReels: ReelItem[] = [
-  {
-    title: "Algebra Core",
-    description: "The foundational algebra moves that show up across nearly every math section — linear equations, systems, and manipulation shortcuts.",
-    duration: "0:48",
-    reelUrl: "https://www.instagram.com/reel/CYYYYYYYYYY1/",
-  },
-  {
-    title: "Advanced Math",
-    description: "Quadratics, exponentials, and functions broken down into a repeatable process so harder problems stop feeling random.",
-    duration: "0:55",
-    reelUrl: "https://www.instagram.com/reel/CYYYYYYYYYY2/",
-  },
-  {
-    title: "Problem Solving",
-    description: "Word problems are pattern problems. Learn to translate real-world scenarios into equations fast and without second-guessing.",
-    duration: "0:50",
-    reelUrl: "https://www.instagram.com/reel/CYYYYYYYYYY3/",
-  },
-  {
-    title: "Data Analysis",
-    description: "Tables, scatterplots, and ratios — the exact framework for reading data questions correctly the first time, every time.",
-    duration: "0:43",
-    reelUrl: "https://www.instagram.com/reel/CYYYYYYYYYY4/",
-  },
+// 3. MATH SUB-SECTIONS (Coming Soon)
+const mathSections: SubSection[] = [
+  { id: "algebra-core", title: "Algebra Core", items: createPlaceholder("Algebra Core") },
+  { id: "advanced-algebra", title: "Advanced Algebra", items: createPlaceholder("Advanced Algebra") },
+  { id: "problem-solving", title: "Problem Solving & Data", items: createPlaceholder("Problem Solving & Data Analysis") },
+  { id: "geometry", title: "Geometry", items: createPlaceholder("Geometry") },
 ];
 
-const trapReels: ReelItem[] = [
-  {
-    title: "The Wording Trick",
-    description: "Testmakers love subtle word swaps that flip the meaning of an answer choice. Learn to catch them before they catch you.",
-    duration: "0:39",
-    reelUrl: "https://www.instagram.com/reel/CZZZZZZZZZZ1/",
-  },
-  {
-    title: "The Extreme Choice Trap",
-    description: "Answers with words like 'always,' 'never,' or 'completely' are rarely correct. Here's the rule and the rare exceptions.",
-    duration: "0:34",
-    reelUrl: "https://www.instagram.com/reel/CZZZZZZZZZZ2/",
-  },
-  {
-    title: "The Half-Right Trap",
-    description: "Some answers are 90% correct — and 100% wrong. Learn to spot the one detail that disqualifies an almost-perfect choice.",
-    duration: "0:46",
-    reelUrl: "https://www.instagram.com/reel/CZZZZZZZZZZ3/",
-  },
+// 4. TRAPS SUB-SECTION (Coming Soon)
+const trapSections: SubSection[] = [
+  { id: "deconstructing-traps", title: "Deconstructing Traps", items: createPlaceholder("Testmaker Traps") },
 ];
 
 interface ReelCardProps {
@@ -184,6 +155,8 @@ interface ReelCardProps {
 }
 
 const ReelCard = ({ reel }: ReelCardProps) => {
+  const isComingSoon = reel.duration === "COMING SOON";
+
   return (
     <div className="bg-[#09090b] border border-white/10 hover:border-[#FF0000] transition-all duration-300 p-6 flex flex-col justify-between h-full">
       <div>
@@ -191,8 +164,8 @@ const ReelCard = ({ reel }: ReelCardProps) => {
           <h3 className="font-['Bebas_Neue'] text-2xl md:text-3xl tracking-wide text-white">
             {reel.title}
           </h3>
-          <span className="flex-shrink-0 font-['DM_Sans'] text-xs tracking-widest text-[#FF0000] border border-[#FF0000]/40 px-2 py-1 whitespace-nowrap">
-            REEL • {reel.duration}
+          <span className={`flex-shrink-0 font-['DM_Sans'] text-xs tracking-widest border px-2 py-1 whitespace-nowrap ${isComingSoon ? "text-white/50 border-white/20" : "text-[#FF0000] border-[#FF0000]/40"}`}>
+            {isComingSoon ? reel.duration : `REEL • ${reel.duration}`}
           </span>
         </div>
         <p className="font-['DM_Sans'] text-sm md:text-base text-white/70 leading-relaxed mb-8">
@@ -200,8 +173,8 @@ const ReelCard = ({ reel }: ReelCardProps) => {
         </p>
       </div>
       <a href={reel.reelUrl} target="_blank" rel="noopener noreferrer" className="block">
-        <button className="w-full font-['Bebas_Neue'] text-sm md:text-base tracking-[0.15em] text-white border border-white/20 hover:border-[#FF0000] hover:text-[#FF0000] transition-all duration-300 py-3 px-4">
-          WATCH STRATEGY ON INSTAGRAM →
+        <button className={`w-full font-['Bebas_Neue'] text-sm md:text-base tracking-[0.15em] transition-all duration-300 py-3 px-4 border ${isComingSoon ? "text-white/70 border-white/10 hover:border-white/40 hover:text-white" : "text-white border-white/20 hover:border-[#FF0000] hover:text-[#FF0000]"}`}>
+          {isComingSoon ? "FOLLOW FOR THIS DROP →" : "WATCH STRATEGY ON INSTAGRAM →"}
         </button>
       </a>
     </div>
@@ -213,7 +186,7 @@ const SAT = () => {
     <div className="bg-black text-white">
       <Navbar />
 
-      {/* NEW: Split-Screen Hero & Table of Contents */}
+      {/* Split-Screen Hero & Table of Contents */}
       <section className="px-6 md:px-16 py-24 md:py-32 border-b border-white/10">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
@@ -244,31 +217,33 @@ const SAT = () => {
 
               {/* TOC 2: Reading */}
               <div>
-                <a href="#reading" className="font-['Bebas_Neue'] text-2xl text-white hover:text-[#FF0000] transition-colors block mb-3">
+                <span className="font-['Bebas_Neue'] text-2xl text-white block mb-3">
                   » 02. READING LOGIC HUB
-                </a>
-                <ul className="text-sm text-white/70 pl-6 grid grid-cols-1 sm:grid-cols-2 gap-2 list-disc list-inside">
-                  <li><a href="#reading" className="hover:text-white transition-colors">Central Ideas & Details</a></li>
-                  <li><a href="#reading" className="hover:text-white transition-colors">Command of Evidence</a></li>
-                  <li><a href="#reading" className="hover:text-white transition-colors">Inferences</a></li>
-                  <li><a href="#reading" className="hover:text-white transition-colors">Cross-Text Connections</a></li>
-                  <li><a href="#reading" className="hover:text-white transition-colors">Text Structure & Purpose</a></li>
-                  <li><a href="#reading" className="hover:text-white transition-colors">Words in Context</a></li>
-                  <li><a href="#reading" className="hover:text-white transition-colors">Rhetorical Synthesis</a></li>
-                  <li><a href="#reading" className="hover:text-white transition-colors">Transitions</a></li>
+                </span>
+                <ul className="text-sm text-white/70 pl-6 grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-2 list-none">
+                  {readingSections.map((section) => (
+                    <li key={section.id}>
+                      <a href={`#${section.id}`} className="hover:text-[#FF0000] transition-colors flex items-center gap-2">
+                        <span className="text-[#FF0000] text-xs">▹</span> {section.title}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
               {/* TOC 3: Math */}
               <div>
-                <a href="#math" className="font-['Bebas_Neue'] text-2xl text-white hover:text-[#FF0000] transition-colors block mb-3">
+                <span className="font-['Bebas_Neue'] text-2xl text-white block mb-3">
                   » 03. MATH HUB
-                </a>
-                <ul className="text-sm text-white/70 pl-6 grid grid-cols-1 sm:grid-cols-2 gap-2 list-disc list-inside">
-                  <li><a href="#math" className="hover:text-white transition-colors">Algebra Core</a></li>
-                  <li><a href="#math" className="hover:text-white transition-colors">Advanced Algebra</a></li>
-                  <li><a href="#math" className="hover:text-white transition-colors">Problem Solving & Data</a></li>
-                  <li><a href="#math" className="hover:text-white transition-colors">Geometry</a></li>
+                </span>
+                <ul className="text-sm text-white/70 pl-6 grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-2 list-none">
+                  {mathSections.map((section) => (
+                    <li key={section.id}>
+                      <a href={`#${section.id}`} className="hover:text-[#FF0000] transition-colors flex items-center gap-2">
+                        <span className="text-[#FF0000] text-xs">▹</span> {section.title}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -277,8 +252,8 @@ const SAT = () => {
         </div>
       </section>
 
-      {/* Grammar Hub - Added id="grammar" for snap-scroll */}
-      <section id="grammar" className="px-6 md:px-16 py-24 scroll-mt-20">
+      {/* Grammar Hub */}
+      <section id="grammar" className="px-6 md:px-16 py-24 scroll-mt-20 border-b border-white/10">
         <SectionTitle title="ALL OF SAT AND ACT GRAMMAR IN 10 MINUTES" subtitle="16 reels. Each under a minute. Get all grammar DONE for the SAT AND ACT." />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
           {universalGrammarReels.map((reel) => (
@@ -289,44 +264,64 @@ const SAT = () => {
         </div>
       </section>
 
-      {/* Reading Hub - Added id="reading" for snap-scroll */}
-      <section id="reading" className="px-6 md:px-16 py-24 bg-white/[0.02] border-t border-b border-white/10 scroll-mt-20">
-        <SectionTitle title="READING LOGIC HUB" subtitle="Stop relying on 'feeling' the right answer. Use concrete evidence to eliminate traps." />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
-          {readingReels.map((reel) => (
-            <React.Fragment key={reel.title}>
-              <ReelCard reel={reel} />
-            </React.Fragment>
+      {/* Reading Sub-sections */}
+      <section className="px-6 md:px-16 py-24 bg-white/[0.02] border-b border-white/10">
+        <div className="mb-16">
+          <SectionTitle title="READING LOGIC HUB" subtitle="Stop relying on 'feeling' the right answer. Master these specific passage types." />
+        </div>
+        
+        <div className="space-y-24">
+          {readingSections.map((section) => (
+            <div key={section.id} id={section.id} className="scroll-mt-24">
+              <h3 className="font-['Bebas_Neue'] text-3xl text-white mb-6 border-l-4 border-[#FF0000] pl-4">{section.title}</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {section.items.map((reel) => (
+                  <ReelCard key={reel.title} reel={reel} />
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </section>
 
-      {/* Math Hub - Added id="math" for snap-scroll */}
-      <section id="math" className="px-6 md:px-16 py-24 scroll-mt-20">
-        <SectionTitle title="MATH HUB" subtitle="From algebra fundamentals to data analysis — strategy over raw computation." />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
-          {mathReels.map((reel) => (
-            <React.Fragment key={reel.title}>
-              <ReelCard reel={reel} />
-            </React.Fragment>
+      {/* Math Sub-sections */}
+      <section className="px-6 md:px-16 py-24 border-b border-white/10">
+        <div className="mb-16">
+          <SectionTitle title="MATH HUB" subtitle="From algebra fundamentals to data analysis — strategy over raw computation." />
+        </div>
+
+        <div className="space-y-24">
+          {mathSections.map((section) => (
+            <div key={section.id} id={section.id} className="scroll-mt-24">
+              <h3 className="font-['Bebas_Neue'] text-3xl text-white mb-6 border-l-4 border-[#FF0000] pl-4">{section.title}</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {section.items.map((reel) => (
+                  <ReelCard key={reel.title} reel={reel} />
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </section>
 
-      {/* Deconstructing Traps */}
-      <section className="px-6 md:px-16 py-24 bg-white/[0.02] border-t border-white/10">
-        <SectionTitle title="DECONSTRUCTING TRAPS" subtitle="Learn how the SAT disguises wrong answers — and how to spot every trick." />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
-          {trapReels.map((reel) => (
-            <React.Fragment key={reel.title}>
-              <ReelCard reel={reel} />
-            </React.Fragment>
+      {/* Traps Sub-sections */}
+      <section className="px-6 md:px-16 py-24 bg-white/[0.02] border-b border-white/10">
+        <div className="space-y-24">
+          {trapSections.map((section) => (
+            <div key={section.id} id={section.id} className="scroll-mt-24">
+              <SectionTitle title={section.title} subtitle="Learn how the SAT disguises wrong answers — and how to spot every trick." />
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+                {section.items.map((reel) => (
+                  <ReelCard key={reel.title} reel={reel} />
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="px-6 md:px-16 py-32 text-center border-t border-white/10">
+      <section className="px-6 md:px-16 py-32 text-center">
         <h2 className="font-['Bebas_Neue'] text-5xl md:text-7xl tracking-wide mb-6">
           MASTER THE <span className="text-[#FF0000]">BLUEPRINTS</span>
         </h2>
