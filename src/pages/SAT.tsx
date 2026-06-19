@@ -213,18 +213,72 @@ const SAT = () => {
     <div className="bg-black text-white">
       <Navbar />
 
-      {/* Hero */}
-      <section className="px-6 md:px-16 py-24 md:py-32 text-center border-b border-white/10">
-        <h1 className="font-['Bebas_Neue'] text-5xl md:text-8xl tracking-wide mb-6">
-          SAT REEL STRATEGIES
-        </h1>
-        <p className="font-['DM_Sans'] text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
-          The SAT rewards pattern recognition, not memorization. Click any strategy below to master the pattern on Instagram.
-        </p>
+      {/* NEW: Split-Screen Hero & Table of Contents */}
+      <section className="px-6 md:px-16 py-24 md:py-32 border-b border-white/10">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          
+          {/* Left Side: Context */}
+          <div>
+            <h1 className="font-['Bebas_Neue'] text-5xl md:text-8xl tracking-wide mb-6">
+              SAT REEL STRATEGIES
+            </h1>
+            <p className="font-['DM_Sans'] text-lg md:text-xl text-white/70 leading-relaxed max-w-lg">
+              The SAT rewards pattern recognition, not memorization. Click any strategy below to master the pattern on Instagram.
+            </p>
+          </div>
+
+          {/* Right Side: The Strategy Matrix (TOC) */}
+          <div className="bg-[#09090b] border border-white/10 p-8 md:p-10 hover:border-[#FF0000]/50 transition-colors duration-500">
+            <h2 className="font-['Bebas_Neue'] text-3xl tracking-wide text-[#FF0000] mb-8 border-b border-[#FF0000]/20 pb-4">
+              THE STRATEGY MATRIX
+            </h2>
+            
+            <div className="space-y-8 font-['DM_Sans']">
+              {/* TOC 1: Grammar */}
+              <div>
+                <a href="#grammar" className="font-['Bebas_Neue'] text-2xl text-white hover:text-[#FF0000] transition-colors block mb-2">
+                  » 01. UNIVERSAL GRAMMAR HUB
+                </a>
+                <p className="text-sm text-white/50 pl-6">(All 16 Master Rules)</p>
+              </div>
+
+              {/* TOC 2: Reading */}
+              <div>
+                <a href="#reading" className="font-['Bebas_Neue'] text-2xl text-white hover:text-[#FF0000] transition-colors block mb-3">
+                  » 02. READING LOGIC HUB
+                </a>
+                <ul className="text-sm text-white/70 pl-6 grid grid-cols-1 sm:grid-cols-2 gap-2 list-disc list-inside">
+                  <li><a href="#reading" className="hover:text-white transition-colors">Central Ideas & Details</a></li>
+                  <li><a href="#reading" className="hover:text-white transition-colors">Command of Evidence</a></li>
+                  <li><a href="#reading" className="hover:text-white transition-colors">Inferences</a></li>
+                  <li><a href="#reading" className="hover:text-white transition-colors">Cross-Text Connections</a></li>
+                  <li><a href="#reading" className="hover:text-white transition-colors">Text Structure & Purpose</a></li>
+                  <li><a href="#reading" className="hover:text-white transition-colors">Words in Context</a></li>
+                  <li><a href="#reading" className="hover:text-white transition-colors">Rhetorical Synthesis</a></li>
+                  <li><a href="#reading" className="hover:text-white transition-colors">Transitions</a></li>
+                </ul>
+              </div>
+
+              {/* TOC 3: Math */}
+              <div>
+                <a href="#math" className="font-['Bebas_Neue'] text-2xl text-white hover:text-[#FF0000] transition-colors block mb-3">
+                  » 03. MATH HUB
+                </a>
+                <ul className="text-sm text-white/70 pl-6 grid grid-cols-1 sm:grid-cols-2 gap-2 list-disc list-inside">
+                  <li><a href="#math" className="hover:text-white transition-colors">Algebra Core</a></li>
+                  <li><a href="#math" className="hover:text-white transition-colors">Advanced Algebra</a></li>
+                  <li><a href="#math" className="hover:text-white transition-colors">Problem Solving & Data</a></li>
+                  <li><a href="#math" className="hover:text-white transition-colors">Geometry</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </section>
 
-      {/* NEW: Universal Grammar Hub (16 Rules) */}
-      <section className="px-6 md:px-16 py-24">
+      {/* Grammar Hub - Added id="grammar" for snap-scroll */}
+      <section id="grammar" className="px-6 md:px-16 py-24 scroll-mt-20">
         <SectionTitle title="ALL OF SAT AND ACT GRAMMAR IN 10 MINUTES" subtitle="16 reels. Each under a minute. Get all grammar DONE for the SAT AND ACT." />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
           {universalGrammarReels.map((reel) => (
@@ -235,8 +289,8 @@ const SAT = () => {
         </div>
       </section>
 
-      {/* Reading Hub */}
-      <section className="px-6 md:px-16 py-24 bg-white/[0.02] border-t border-b border-white/10">
+      {/* Reading Hub - Added id="reading" for snap-scroll */}
+      <section id="reading" className="px-6 md:px-16 py-24 bg-white/[0.02] border-t border-b border-white/10 scroll-mt-20">
         <SectionTitle title="READING LOGIC HUB" subtitle="Stop relying on 'feeling' the right answer. Use concrete evidence to eliminate traps." />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
           {readingReels.map((reel) => (
@@ -247,8 +301,8 @@ const SAT = () => {
         </div>
       </section>
 
-      {/* Math Hub */}
-      <section className="px-6 md:px-16 py-24">
+      {/* Math Hub - Added id="math" for snap-scroll */}
+      <section id="math" className="px-6 md:px-16 py-24 scroll-mt-20">
         <SectionTitle title="MATH HUB" subtitle="From algebra fundamentals to data analysis — strategy over raw computation." />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
           {mathReels.map((reel) => (
