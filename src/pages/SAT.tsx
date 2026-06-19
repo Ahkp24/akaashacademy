@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import SectionTitle from "../components/SectionTitle";
 
 interface ReelItem {
@@ -10,13 +9,108 @@ interface ReelItem {
   reelUrl: string;
 }
 
-const readingReels: ReelItem[] = [
+// 1. THE 16 UNIVERSAL GRAMMAR RULES (Copy-paste this array to ACT.tsx too)
+const universalGrammarReels: ReelItem[] = [
   {
-    title: "Grammar Rules",
-    description: "The handful of grammar rules tested over and over on the SAT — punctuation, agreement, and modifiers explained in one fast hit.",
+    title: "Rule 1: Commas",
+    description: "The absolute baseline. Learn exactly when to use commas for lists, intro phrases, and non-essential clauses.",
     duration: "0:45",
-    reelUrl: "https://www.instagram.com/reel/CXXXXXXXXXX1/",
+    reelUrl: "https://www.instagram.com/reel/GRAMMAR_01/",
   },
+  {
+    title: "Rule 2: Semicolons & Colons",
+    description: "Semicolons separate two full sentences. Colons introduce lists or explanations. Master the difference in seconds.",
+    duration: "0:42",
+    reelUrl: "https://www.instagram.com/reel/GRAMMAR_02/",
+  },
+  {
+    title: "Rule 3: Dashes",
+    description: "Dashes are just aggressive commas. Learn how to use them to isolate non-essential information.",
+    duration: "0:38",
+    reelUrl: "https://www.instagram.com/reel/GRAMMAR_03/",
+  },
+  {
+    title: "Rule 4: Apostrophes",
+    description: "Possession vs. Contraction. Stop letting 'its' vs 'it's' steal your points.",
+    duration: "0:40",
+    reelUrl: "https://www.instagram.com/reel/GRAMMAR_04/",
+  },
+  {
+    title: "Rule 5: Subject-Verb Agreement",
+    description: "Testmakers hide the subject behind prepositional phrases to trick you. Here is the visual check to find the real subject.",
+    duration: "0:50",
+    reelUrl: "https://www.instagram.com/reel/GRAMMAR_05/",
+  },
+  {
+    title: "Rule 6: Pronoun Agreement",
+    description: "Singular nouns need singular pronouns. Plural needs plural. Spot the mismatch instantly.",
+    duration: "0:35",
+    reelUrl: "https://www.instagram.com/reel/GRAMMAR_06/",
+  },
+  {
+    title: "Rule 7: Verb Tense Consistency",
+    description: "Keep your verbs in the same time zone. Learn the trigger words that force a tense shift.",
+    duration: "0:44",
+    reelUrl: "https://www.instagram.com/reel/GRAMMAR_07/",
+  },
+  {
+    title: "Rule 8: Pronoun Case",
+    description: "When to use 'I' vs 'me' or 'who' vs 'whom'. The foolproof test to get it right every time.",
+    duration: "0:41",
+    reelUrl: "https://www.instagram.com/reel/GRAMMAR_08/",
+  },
+  {
+    title: "Rule 9: Misplaced Modifiers",
+    description: "If a descriptive phrase starts a sentence, the thing it describes MUST come right after the comma.",
+    duration: "0:48",
+    reelUrl: "https://www.instagram.com/reel/GRAMMAR_09/",
+  },
+  {
+    title: "Rule 10: Parallel Structure",
+    description: "Lists must match in format (e.g., running, jumping, and swimming). Spot the odd one out.",
+    duration: "0:39",
+    reelUrl: "https://www.instagram.com/reel/GRAMMAR_10/",
+  },
+  {
+    title: "Rule 11: Logical Comparisons",
+    description: "You can compare a book to a book, but you can't compare a book to an author. Catch the faulty comparisons.",
+    duration: "0:46",
+    reelUrl: "https://www.instagram.com/reel/GRAMMAR_11/",
+  },
+  {
+    title: "Rule 12: Concision",
+    description: "When multiple answers are grammatically correct, the shortest one almost always wins. Cut the fluff.",
+    duration: "0:37",
+    reelUrl: "https://www.instagram.com/reel/GRAMMAR_12/",
+  },
+  {
+    title: "Rule 13: Redundancy",
+    description: "Saying 'annually every year' is a trap. Learn to spot words that repeat the same meaning.",
+    duration: "0:34",
+    reelUrl: "https://www.instagram.com/reel/GRAMMAR_13/",
+  },
+  {
+    title: "Rule 14: Idioms & Expressions",
+    description: "Sometimes the test just wants to know if you know the right preposition. Is it 'capable of' or 'capable to'?",
+    duration: "0:43",
+    reelUrl: "https://www.instagram.com/reel/GRAMMAR_14/",
+  },
+  {
+    title: "Rule 15: Sentence Fragments",
+    description: "A sentence needs a main subject and an active verb. Learn to spot fake verbs (-ing words) that create fragments.",
+    duration: "0:47",
+    reelUrl: "https://www.instagram.com/reel/GRAMMAR_15/",
+  },
+  {
+    title: "Rule 16: Run-on Sentences",
+    description: "Two independent clauses cannot be glued together with just a comma. Here are the 3 ways to legally fix a run-on.",
+    duration: "0:52",
+    reelUrl: "https://www.instagram.com/reel/GRAMMAR_16/",
+  },
+];
+
+// 2. THE READING HUB (Grammar removed, purely reading logic now)
+const readingReels: ReelItem[] = [
   {
     title: "Transitions",
     description: "Master the logic words that connect ideas — and learn how the SAT tests whether you actually understand the relationship between sentences.",
@@ -30,13 +124,7 @@ const readingReels: ReelItem[] = [
     reelUrl: "https://www.instagram.com/reel/CXXXXXXXXXX3/",
   },
   {
-    title: "Sentence Structure",
-    description: "Identify fragments, run-ons, and comma splices in seconds with a pattern-based approach that works on every passage.",
-    duration: "0:41",
-    reelUrl: "https://www.instagram.com/reel/CXXXXXXXXXX4/",
-  },
-  {
-    title: "Vocabulary",
+    title: "Vocabulary in Context",
     description: "The SAT doesn't test obscure words anymore — it tests context. Here's how to nail vocab-in-context questions every time.",
     duration: "0:36",
     reelUrl: "https://www.instagram.com/reel/CXXXXXXXXXX5/",
@@ -135,9 +223,21 @@ const SAT = () => {
         </p>
       </section>
 
-      {/* Reading & Writing Hub */}
+      {/* NEW: Universal Grammar Hub (16 Rules) */}
       <section className="px-6 md:px-16 py-24">
-        <SectionTitle title="READING & WRITING HUB" subtitle="Five core patterns that cover the majority of Reading & Writing questions." />
+        <SectionTitle title="THE 16 UNIVERSAL GRAMMAR RULES" subtitle="The exact frameworks that govern the Writing section. Master these, and you master the grammar on both the SAT and ACT." />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+          {universalGrammarReels.map((reel) => (
+            <React.Fragment key={reel.title}>
+              <ReelCard reel={reel} />
+            </React.Fragment>
+          ))}
+        </div>
+      </section>
+
+      {/* Reading Hub */}
+      <section className="px-6 md:px-16 py-24 bg-white/[0.02] border-t border-b border-white/10">
+        <SectionTitle title="READING LOGIC HUB" subtitle="Stop relying on 'feeling' the right answer. Use concrete evidence to eliminate traps." />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
           {readingReels.map((reel) => (
             <React.Fragment key={reel.title}>
@@ -148,7 +248,7 @@ const SAT = () => {
       </section>
 
       {/* Math Hub */}
-      <section className="px-6 md:px-16 py-24 bg-white/[0.02] border-t border-b border-white/10">
+      <section className="px-6 md:px-16 py-24">
         <SectionTitle title="MATH HUB" subtitle="From algebra fundamentals to data analysis — strategy over raw computation." />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
           {mathReels.map((reel) => (
@@ -160,7 +260,7 @@ const SAT = () => {
       </section>
 
       {/* Deconstructing Traps */}
-      <section className="px-6 md:px-16 py-24">
+      <section className="px-6 md:px-16 py-24 bg-white/[0.02] border-t border-white/10">
         <SectionTitle title="DECONSTRUCTING TRAPS" subtitle="Learn how the SAT disguises wrong answers — and how to spot every trick." />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
           {trapReels.map((reel) => (
