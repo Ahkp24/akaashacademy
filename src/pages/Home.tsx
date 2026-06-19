@@ -73,7 +73,7 @@ const resources: ResourceItem[] = [
   {
     title: "Traps",
     description:
-      "Learn to spot the wrong-answer traps testmakers hide..",
+      "Learn to spot the wrong-answer traps testmakers hide.",
   },
   {
     title: "Tips",
