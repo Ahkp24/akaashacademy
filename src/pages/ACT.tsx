@@ -10,27 +10,102 @@ interface ReelItem {
   reelUrl: string;
 }
 
-const englishReels: ReelItem[] = [
+const universalGrammarReels: ReelItem[] = [
   {
-    title: "Punctuation Systems",
-    description:
-      "Commas, semicolons, dashes, and colons follow a strict internal logic. This is the exact punctuation framework that powers both the SAT and ACT English sections.",
-    duration: "0:42",
-    reelUrl: "https://www.instagram.com/reel/CAAAAAAAAAA1/",
+    title: "Clauses",
+    description: "What makes up a sentence?",
+    duration: "0:27",
+    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZYGEKXgrwr/",
   },
   {
-    title: "Concision Hacks",
-    description:
-      "When two answer choices say the same thing, the shortest correct option almost always wins. Use this rule to eliminate wordy traps instantly.",
+    title: "Boundaries",
+    description: "Know exactly what the SAT and ACT tests.",
     duration: "0:37",
-    reelUrl: "https://www.instagram.com/reel/CAAAAAAAAAA2/",
+    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZYNunAgJkJ/",
   },
   {
-    title: "Modifier Constraints",
-    description:
-      "Misplaced and dangling modifiers show up constantly on the ACT. Learn the one-second visual check that catches every modifier error.",
-    duration: "0:40",
-    reelUrl: "https://www.instagram.com/reel/CAAAAAAAAAA3/",
+    title: "Boundary Errors",
+    description: "Traps and Tricks the SAT and ACT always try to pull.",
+    duration: "0:28",
+    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZY7sVTsUEY/",
+  },
+  {
+    title: "PUNCTUATION: Semicolons & Periods",
+    description: "What makes a sentence done?",
+    duration: "0:33",
+    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZaQsweRXj6/",
+  },
+  {
+    title: "PUNCTUATION: Colons",
+    description: "The easiest punctuation on the SAT and ACT.",
+    duration: "0:29",
+    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZaW-lBRdKU/",
+  },
+  {
+    title: "PUNCTATION: Dashes",
+    description: "You never use these, but the SAT and ACT LOVE them.",
+    duration: "0:37",
+    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZbJ51KMSWD/",
+  },
+  {
+    title: "FANBOYS",
+    description: "Is that Drake?",
+    duration: "0:28",
+    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZcuf5hxVlC/",
+  },
+  {
+    title: "Subordinating Conjunctions",
+    description: "The ultimate TRICK the SAT and ACT pull that's really easy to see through.",
+    duration: "0:41",
+    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZdVr_CgTkS/",
+  },
+  {
+    title: "PUNCTUATION: Commas",
+    description: "A rapid-fire overview of when to use and not use commas.",
+    duration: "0:21",
+    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZdaMnags6s/",
+  },
+  {
+    title: "Appositives",
+    description: "https://www.instagram.com/akaashacademy/reel/DZd6QcNMK7z/",
+    duration: "0:56",
+    reelUrl: "https://www.instagram.com/reel/GRAMMAR_10/",
+  },
+  {
+    title: "Modifiers",
+    description: "What sounds right isn't always right.",
+    duration: "0:42",
+    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZeD6Mds-AK/",
+  },
+  {
+    title: "Agreement",
+    description: "THE ULTIMATE GRAMMAR TRICK STOPPING YOU FROM A 1600!",
+    duration: "0:60",
+    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZfbAT4xzJn/",
+  },
+  {
+    title: "Possession",
+    description: "Who owns what and why?",
+    duration: "0:60",
+    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZfjG3pRmOw/",
+  },
+  {
+    title: "Consistency",
+    description: "Learn what the SAT and ACT love and hate to see.",
+    duration: "0:42",
+    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZf-rr_ABqm/",
+  },
+  {
+    title: "Parallelism",
+    description: "Another rare rule that keeps people from breaking past the 600s.",
+    duration: "0:27",
+    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZgVotQMCP2/",
+  },
+  {
+    title: "Logic",
+    description: "What makes a sentence make sense?",
+    duration: "0:41",
+    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZgdX8YsPmE/",
   },
 ];
 
@@ -171,19 +246,13 @@ const ACT: React.FC = () => {
       </section>
 
       {/* Universal English Patterns */}
-      <section className="px-6 md:px-16 py-24">
-        <SectionTitle
-          title="UNIVERSAL ENGLISH PATTERNS"
-          subtitle="One toolkit. Two tests. Zero wasted effort."
-        />
-        <p className="font-['DM_Sans'] text-base md:text-lg text-white/70 leading-relaxed max-w-3xl mx-auto text-center mt-6 mb-16">
-          There are 16 fundamental grammar rules that govern both the SAT and
-          ACT. Master these structures once, and unlock both writing sections
-          using our universal toolkit.
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {englishReels.map((reel) => (
-            <ReelCard key={reel.title} reel={reel} />
+     <section className="px-6 md:px-16 py-24">
+        <SectionTitle title="ALL OF SAT AND ACT GRAMMAR IN 10 MINUTES" subtitle="16 reels. Each under a minute. Get all grammar DONE for the SAT AND ACT." />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+          {universalGrammarReels.map((reel) => (
+            <React.Fragment key={reel.title}>
+              <ReelCard reel={reel} />
+            </React.Fragment>
           ))}
         </div>
       </section>
