@@ -67,9 +67,9 @@ const universalGrammarReels: ReelItem[] = [
   },
   {
     title: "Appositives",
-    description: "https://www.instagram.com/akaashacademy/reel/DZd6QcNMK7z/",
+    description: "Michael Jackson can help you with a rare rule for the SAT and ACT.",
     duration: "0:56",
-    reelUrl: "https://www.instagram.com/reel/GRAMMAR_10/",
+    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZd6QcNMK7z/",
   },
   {
     title: "Modifiers",
