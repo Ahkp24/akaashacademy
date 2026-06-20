@@ -54,7 +54,7 @@ const subjects: SubjectItem[] = [
     title: "SAT",
     description:
       "Understanding content & applying strategy define every high SAT score. Learn those here.",
-    link: "/sat",
+    link: "/reading",
   },
   {
     title: "ACT",
@@ -91,7 +91,7 @@ const Home = () => {
         title="LEARN IT QUICK, MAKE IT STICK"
         subtitle="Master SAT and ACT patterns through efficient strategies."
         ctaText="Start Improving"
-        ctaLink="/sat"
+        ctaLink="/reading"
       />
 
       {/* The Baseline / The Akaash Difference */}
@@ -184,7 +184,7 @@ const Home = () => {
           Join Akaash Academy and get your scores up today!
         </p>
         <Link
-          to="/sat"
+          to="/reading"
           className="inline-block font-['Bebas_Neue'] text-lg tracking-[0.2em] px-10 py-4 border-2 border-[#FF0000] text-white hover:bg-[#FF0000] transition-colors duration-300"
         >
           START IMPROVING
