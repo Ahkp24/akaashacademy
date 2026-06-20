@@ -14,8 +14,8 @@ export default function App() {
         <div className="flex-1">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/sat" element={<SAT />} />
-            <Route path="/act" element={<ACT />} />
+            <Route path="/reading" element={<SAT />} />
+            <Route path="/math" element={<ACT />} />
             <Route path="/about" element={<About />} />
           </Routes>
         </div>
