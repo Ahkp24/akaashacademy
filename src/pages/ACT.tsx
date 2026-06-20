@@ -40,10 +40,6 @@ const actMathSections: SubSection[] = [
   { id: "trigonometry", title: "Trigonometry", items: createPlaceholder("Trigonometry") },
 ];
 
-// 3. TRAPS SUB-SECTION
-const trapSections: SubSection[] = [
-  { id: "deconstructing-traps", title: "Deconstructing Traps", items: createPlaceholder("Testmaker Traps") },
-];
 
 interface ReelCardProps { reel: ReelItem; }
 
@@ -131,14 +127,7 @@ const ACT = () => {
                   </ul>
                 </div>
 
-                {/* TOC: Traps */}
-                <div>
-                  <a href="#deconstructing-traps" className="font-['Bebas_Neue'] text-2xl text-white hover:text-[#FF0000] transition-colors block mb-2">
-                    » 03. TESTMAKER TRAPS
-                  </a>
-                  <p className="text-sm text-white/50 pl-6">Spot the wrong answers instantly.</p>
-                </div>
-
+               
               </div>
             </div>
           </ScrollReveal>
@@ -193,24 +182,7 @@ const ACT = () => {
         </div>
       </section>
 
-      {/* Traps Sub-sections */}
-      <section className="px-6 md:px-16 py-24 border-b border-white/10">
-        <div className="space-y-24">
-          {trapSections.map((section) => (
-            <div key={section.id} id={section.id} className="scroll-mt-24">
-              <SectionTitle title={section.title} subtitle="Learn how the testmakers disguise wrong answers — and how to spot every trick." />
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
-                {section.items.map((reel, idx) => (
-                  <ScrollReveal key={reel.title} delay={idx * 100}>
-                    <ReelCard reel={reel} />
-                  </ScrollReveal>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
+     
       {/* Final CTA */}
       <section className="px-6 md:px-16 py-32 text-center">
         <ScrollReveal>
