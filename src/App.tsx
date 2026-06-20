@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import SAT from "./pages/SAT";
 import ACT from "./pages/ACT";
 import About from "./pages/About";
+import Tips from "./pages/Tips";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
             <Route path="/reading" element={<SAT />} />
             <Route path="/math" element={<ACT />} />
             <Route path="/about" element={<About />} />
+            <Route path="/tips" element={<Tips />} />
           </Routes>
         </div>
         <Footer />
