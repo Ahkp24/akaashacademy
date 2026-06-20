@@ -5,8 +5,9 @@ import { cn } from "../lib/utils";
 // UPDATED: Changed the labels to match the new unified hubs
 const links = [
   { label: "Home", to: "/" },
-  { label: "Reading / Writing", to: "/reading" }, // <-- UPDATED
-  { label: "Math Hub", to: "/math" },             // <-- UPDATED
+  { label: "Reading / Writing", to: "/reading" },
+  { label: "Math Hub", to: "/math" },
+  { label: "Tips & Tricks", to: "/tips" }, // <-- ADD THIS LINE
   { label: "About", to: "/about" },
 ];
 
