@@ -59,7 +59,7 @@ const subjects: SubjectItem[] = [
   {
     title: "Math",
     description:
-      "The SAT and ACT both cover a large amount of math topics that we easily condence for you to understand the basics and apply them in confusing word problems.",
+      "The SAT and ACT both cover a large amount of math topics that we easily condense for you to understand the basics and apply them in confusing word problems.",
     link: "/math",
   },
 ];
