@@ -10,43 +10,43 @@ interface ReelItem {
   reelUrl: string;
 }
 
-// THE 6 ACTIVE TIPS & TRICKS REELS
+// 📌 THE TIPS & TRICKS REELS ARRAY
 const tipsReels: ReelItem[] = [
   {
-    title: "The Wording Trick",
-    description: "Testmakers love subtle word swaps that flip the meaning of an answer choice. Learn to catch them before they catch you.",
+    title: "SAT: Grammar First",
+    description: "Targeting low-hanging fruit first will actually help you do the tests MUCH faster.",
+    duration: "0:26",
+    reelUrl: "https://www.instagram.com/akaashacademy/reel/DXGATutjF2u/",
+  },
+  {
+    title: "Skipping Hard Questions",
+    description: "Sometimes a question may take too long to solve. Here's how to maximize your points and unstuck yourself.",
+    duration: "0:44",
+    reelUrl: "https://www.instagram.com/akaashacademy/reel/DXRnXGlDchL/",
+  },
+  {
+    title: "SAT: Skipping the Notes",
+    description: "The last few questions on SAT reading are very time-consuming, but top-scoring students solve them in 20 seconds. How?",
+    duration: "0:27",
+    reelUrl: "https://www.instagram.com/akaashacademy/reel/DXSEYJyEVLJ/",
+  },
+  {
+    title: "Read the Question First",
+    description: "A super-simple tip that many overlook costs them their scores.",
+    duration: "0:15",
+    reelUrl: "https://www.instagram.com/akaashacademy/reel/DYfpaqAAdkA/",
+  },
+  {
+    title: "Distractors",
+    description: "How do you know when an answer choice is incorrect?",
     duration: "0:39",
-    reelUrl: "https://www.instagram.com/reel/CZZZZZZZZZZ1/",
+    reelUrl: "https://www.instagram.com/akaashacademy/reel/DYf0OwZgNwk/",
   },
   {
-    title: "The Extreme Choice Trap",
-    description: "Answers with words like 'always,' 'never,' or 'completely' are rarely correct. Here's the rule and the rare exceptions.",
-    duration: "0:34",
-    reelUrl: "https://www.instagram.com/reel/CZZZZZZZZZZ2/",
-  },
-  {
-    title: "The Half-Right Trap",
-    description: "Some answers are 90% correct — and 100% wrong. Learn to spot the one detail that disqualifies an almost-perfect choice.",
-    duration: "0:46",
-    reelUrl: "https://www.instagram.com/reel/CZZZZZZZZZZ3/",
-  },
-  {
-    title: "Tip 4 Title",
-    description: "Add your tip description here.",
-    duration: "0:45",
-    reelUrl: "https://www.instagram.com/akaashacademy/",
-  },
-  {
-    title: "Tip 5 Title",
-    description: "Add your tip description here.",
-    duration: "0:45",
-    reelUrl: "https://www.instagram.com/akaashacademy/",
-  },
-  {
-    title: "Tip 6 Title",
-    description: "Add your tip description here.",
-    duration: "0:45",
-    reelUrl: "https://www.instagram.com/akaashacademy/",
+    title: "50/50 Rule",
+    description: "We ALL get that moment trapped between two answer choices. But when you watch this, you'll never encounter that again.",
+    duration: "0:20",
+    reelUrl: "https://www.instagram.com/akaashacademy/reel/DZDgwy3A2lA/",
   },
 ];
 
@@ -76,7 +76,7 @@ const ReelCard = ({ reel }: ReelCardProps) => {
 
 const Tips = () => {
   return (
-    <div className="bg-black text-white">
+    <div className="bg-black text-white min-h-screen flex flex-col">
       <Navbar />
 
       {/* Hero Section */}
@@ -86,19 +86,40 @@ const Tips = () => {
             TIPS & <span className="text-[#FF0000]">TRICKS</span>
           </h1>
           <p className="font-['DM_Sans'] text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
-            Stop falling for the bait. Here is how testmakers disguise wrong answers and build traps to ruin your score.
+            Swipe through this deck to unlock all the tips that top-scoring students use on their tests, and go below to see video breakdowns of how they work.
           </p>
         </ScrollReveal>
       </section>
 
-      {/* Unified Tips Grid */}
+      {/* Canva Live Embed Section */}
+      <section className="px-6 md:px-16 py-24 border-b border-white/10">
+        {/* CHANGED: max-w-md keeps the vertical slide from blowing up too huge on desktop */}
+        <div className="max-w-md mx-auto">
+          <ScrollReveal>
+            <SectionTitle title="THE MASTER TRAP DECK" subtitle="Swipe to unlock ALL the time-saving and score-boosting tips & tricks you need!" />
+            
+            {/* CHANGED: pt-[125%] perfectly matches your Canva's portrait aspect ratio */}
+            <div className="mt-16 relative w-full pt-[125%] rounded-lg overflow-hidden border border-white/20 shadow-[0_0_40px_rgba(255,0,0,0.1)] hover:border-[#FF0000]/50 transition-colors duration-500 bg-[#09090b]">
+              <iframe
+                className="absolute top-0 left-0 w-full h-full border-0"
+                src="https://www.canva.com/design/DAHGrG-I2Yw/wfE7aO-cvt3s7CiFRQ5kaQ/view?embed"
+                allowFullScreen
+                loading="lazy"
+                title="Akaash Academy Tips and Tricks"
+              ></iframe>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Reels Grid Section */}
       <section className="px-6 md:px-16 py-24 border-b border-white/10">
         <div className="mb-16">
-          <SectionTitle title="THE TRAP MATRIX" subtitle="Learn to spot subtle word swaps, extreme choices, and calculation baits." />
+          <SectionTitle title="THE VIDEO VAULT" subtitle="Watch the complete breakdowns of each trick on Instagram." />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {tipsReels.map((reel, idx) => (
-            <ScrollReveal key={reel.title} delay={idx * 100}>
+            <ScrollReveal key={idx} delay={idx * 100}>
               <ReelCard reel={reel} />
             </ScrollReveal>
           ))}
@@ -106,7 +127,7 @@ const Tips = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="px-6 md:px-16 py-32 text-center">
+      <section className="px-6 md:px-16 py-32 text-center mt-auto">
         <ScrollReveal>
           <h2 className="font-['Bebas_Neue'] text-5xl md:text-7xl tracking-wide mb-6">
             OUTSMART THE <span className="text-[#FF0000]">TEST</span>
