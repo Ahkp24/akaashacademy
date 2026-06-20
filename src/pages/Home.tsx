@@ -60,7 +60,7 @@ const subjects: SubjectItem[] = [
     title: "ACT",
     description:
       "The ACT is built on patterns that are easily broken down here.",
-    link: "/act",
+    link: "/math",
   },
 ];
 
