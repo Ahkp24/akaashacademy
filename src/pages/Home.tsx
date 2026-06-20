@@ -51,15 +51,15 @@ const approachSteps: ApproachStep[] = [
 
 const subjects: SubjectItem[] = [
   {
-    title: "SAT",
+    title: "Reading, Writing, and English",
     description:
-      "Understanding content & applying strategy define every high SAT score. Learn those here.",
+      "Despite knowing the language well, the SAT and ACT trip us up with rules and tricks that make English difficult. But with bite-sized videos and practice, those tricks become so easy to avoid.",
     link: "/reading",
   },
   {
-    title: "ACT",
+    title: "Math",
     description:
-      "The ACT is built on patterns that are easily broken down here.",
+      "The SAT and ACT both cover a large amount of math topics that we easily condence for you to understand the basics and apply them in confusing word problems.",
     link: "/math",
   },
 ];
