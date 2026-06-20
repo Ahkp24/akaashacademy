@@ -25,18 +25,22 @@ const createPlaceholder = (topic: string): ReelItem[] => [
   }
 ];
 
-// 1. MATH SUB-SECTIONS (Expanded Syllabus)
-const mathSections: SubSection[] = [
+// 1. SAT MATH SUB-SECTIONS
+const satMathSections: SubSection[] = [
   { id: "algebra", title: "Algebra", items: createPlaceholder("Algebra") },
   { id: "advanced-algebra", title: "Advanced Algebra", items: createPlaceholder("Advanced Algebra") },
   { id: "problem-solving", title: "Problem Solving & Data", items: createPlaceholder("Problem Solving & Data Analysis") },
   { id: "geometry", title: "Geometry", items: createPlaceholder("Geometry") },
-  { id: "trigonometry", title: "Trigonometry", items: createPlaceholder("Trigonometry") },
-  { id: "linear-algebra", title: "Linear Algebra", items: createPlaceholder("Linear Algebra") },
   { id: "probability", title: "Probability", items: createPlaceholder("Probability") },
 ];
 
-// 2. TRAPS SUB-SECTION
+// 2. ACT MATH SUB-SECTIONS
+const actMathSections: SubSection[] = [
+  { id: "linear-algebra", title: "Linear Algebra", items: createPlaceholder("Linear Algebra") },
+  { id: "trigonometry", title: "Trigonometry", items: createPlaceholder("Trigonometry") },
+];
+
+// 3. TRAPS SUB-SECTION
 const trapSections: SubSection[] = [
   { id: "deconstructing-traps", title: "Deconstructing Traps", items: createPlaceholder("Testmaker Traps") },
 ];
@@ -81,7 +85,7 @@ const ACT = () => {
                 THE MATH HUB
               </h1>
               <p className="font-['DM_Sans'] text-lg md:text-xl text-white/70 leading-relaxed max-w-lg">
-                Stop relying on raw calculation speed. We teach you how to translate word problems and recognize formula triggers instantly.
+                Stop relying on raw calculation speed. We teach you how to translate word problems and recognize formula triggers instantly across both exams.
               </p>
             </div>
           </ScrollReveal>
@@ -94,40 +98,85 @@ const ACT = () => {
               </h2>
               
               <div className="space-y-8 font-['DM_Sans']">
-                {/* TOC: Math */}
+                
+                {/* TOC: SAT Math */}
                 <div>
                   <span className="font-['Bebas_Neue'] text-2xl text-white block mb-3">
-                    » 01. QUANTITATIVE LOGIC
+                    » 01. SAT MATH
                   </span>
                   <ul className="text-sm text-white/70 pl-6 grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-2 list-none">
-                    {mathSections.map((section) => (
+                    {satMathSections.map((section) => (
                       <li key={section.id}>
                         <a href={`#${section.id}`} className="hover:text-[#FF0000] transition-colors flex items-center gap-2">
                           <span className="text-[#FF0000] text-xs">▹</span> {section.title}
                         </a>
                       </li>
                     ))}
-                    <li>
-                      <a href="#deconstructing-traps" className="hover:text-[#FF0000] transition-colors flex items-center gap-2 mt-4">
-                        <span className="text-[#FF0000] text-xs">▹</span> Deconstructing Traps
-                      </a>
-                    </li>
                   </ul>
                 </div>
+
+                {/* TOC: ACT Math */}
+                <div>
+                  <span className="font-['Bebas_Neue'] text-2xl text-white block mb-3">
+                    » 02. ACT MATH
+                  </span>
+                  <ul className="text-sm text-white/70 pl-6 grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-2 list-none">
+                    {actMathSections.map((section) => (
+                      <li key={section.id}>
+                        <a href={`#${section.id}`} className="hover:text-[#FF0000] transition-colors flex items-center gap-2">
+                          <span className="text-[#FF0000] text-xs">▹</span> {section.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* TOC: Traps */}
+                <div>
+                  <a href="#deconstructing-traps" className="font-['Bebas_Neue'] text-2xl text-white hover:text-[#FF0000] transition-colors block mb-2">
+                    » 03. TESTMAKER TRAPS
+                  </a>
+                  <p className="text-sm text-white/50 pl-6">Spot the wrong answers instantly.</p>
+                </div>
+
               </div>
             </div>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* Math Sub-sections */}
+      {/* SAT Math Sub-sections */}
       <section className="px-6 md:px-16 py-24 border-b border-white/10">
         <div className="mb-16">
-          <SectionTitle title="MATH FRAMEWORKS" subtitle="From algebra fundamentals to advanced probability — strategy over raw computation." />
+          <SectionTitle title="SAT MATH FRAMEWORKS" subtitle="From algebra fundamentals to probability — master the core patterns." />
         </div>
 
         <div className="space-y-24">
-          {mathSections.map((section) => (
+          {satMathSections.map((section) => (
+            <div key={section.id} id={section.id} className="scroll-mt-24">
+              <ScrollReveal>
+                <h3 className="font-['Bebas_Neue'] text-3xl text-white mb-6 border-l-4 border-[#FF0000] pl-4">{section.title}</h3>
+              </ScrollReveal>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {section.items.map((reel, idx) => (
+                  <ScrollReveal key={reel.title} delay={idx * 100}>
+                    <ReelCard reel={reel} />
+                  </ScrollReveal>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ACT Math Sub-sections */}
+      <section className="px-6 md:px-16 py-24 bg-white/[0.02] border-b border-white/10">
+        <div className="mb-16">
+          <SectionTitle title="ACT MATH FRAMEWORKS" subtitle="Advanced quantitative concepts exclusive to the ACT sprint." />
+        </div>
+
+        <div className="space-y-24">
+          {actMathSections.map((section) => (
             <div key={section.id} id={section.id} className="scroll-mt-24">
               <ScrollReveal>
                 <h3 className="font-['Bebas_Neue'] text-3xl text-white mb-6 border-l-4 border-[#FF0000] pl-4">{section.title}</h3>
@@ -145,7 +194,7 @@ const ACT = () => {
       </section>
 
       {/* Traps Sub-sections */}
-      <section className="px-6 md:px-16 py-24 bg-white/[0.02] border-b border-white/10">
+      <section className="px-6 md:px-16 py-24 border-b border-white/10">
         <div className="space-y-24">
           {trapSections.map((section) => (
             <div key={section.id} id={section.id} className="scroll-mt-24">
