@@ -102,7 +102,7 @@ const SAT = () => {
               READING & WRITING
             </h1>
             <p className="font-['DM_Sans'] text-lg md:text-xl text-white/70 leading-relaxed max-w-lg">
-              The verbal sections reward pattern recognition, not "feeling" the right answer. Click any strategy below to master the logic.
+              "Feeling" which answer is right isn't enough, you need strategies to back that up.
             </p>
           </div>
 
