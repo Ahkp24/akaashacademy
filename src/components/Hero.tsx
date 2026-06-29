@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 interface HeroProps {
   title: string;
-  subtitle: string;
-  ctaText: string;
-  ctaLink: string;
+  subtitle?: string;
+  ctaText?: string;  // <-- Add this
+  ctaLink?: string;  // <-- Add this
 }
 
 const Hero: React.FC<HeroProps> = ({ title, subtitle, ctaText, ctaLink }) => {
