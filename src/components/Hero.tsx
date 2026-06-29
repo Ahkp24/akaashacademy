@@ -27,7 +27,7 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle, ctaText, ctaLink }) => {
         
         {/* ADDED: hover:scale-105 for button pop */}
         <Link 
-          to={ctaLink} 
+          to={ctaLink || "/"} 
           className="inline-block font-['Bebas_Neue'] text-lg tracking-[0.2em] px-10 py-4 border-2 border-[#FF0000] text-white hover:bg-[#FF0000] hover:scale-105 transition-all duration-300"
         >
           {ctaText}
