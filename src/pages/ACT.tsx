@@ -2,12 +2,18 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import SectionTitle from "../components/SectionTitle";
 import ScrollReveal from "../components/ScrollReveal";
+import Card from "../components/Card";
 
+// UPDATED: Now supports the new multi-platform links
 interface ReelItem {
   title: string;
   description: string;
   duration: string;
-  reelUrl: string;
+  socialLinks?: {
+    instagram?: string;
+    tiktok?: string;
+    youtube?: string;
+  };
 }
 
 interface SubSection {
@@ -16,12 +22,12 @@ interface SubSection {
   items: ReelItem[];
 }
 
+// Generates a COMING SOON card without socialLinks
 const createPlaceholder = (topic: string): ReelItem[] => [
   {
     title: topic,
     description: `The strategic framework for ${topic}. Video dropping soon. Follow @akaashacademy to stay updated on our latest strategy drops.`,
     duration: "COMING SOON",
-    reelUrl: "https://www.instagram.com/akaashacademy/",
   }
 ];
 
@@ -39,31 +45,6 @@ const actMathSections: SubSection[] = [
   { id: "linear-algebra", title: "Linear Algebra", items: createPlaceholder("Linear Algebra") },
   { id: "trigonometry", title: "Trigonometry", items: createPlaceholder("Trigonometry") },
 ];
-
-
-interface ReelCardProps { reel: ReelItem; }
-
-const ReelCard = ({ reel }: ReelCardProps) => {
-  const isComingSoon = reel.duration === "COMING SOON";
-  return (
-    <div className="bg-[#09090b] border border-white/10 hover:border-[#FF0000] transition-all duration-300 p-6 flex flex-col justify-between h-full">
-      <div>
-        <div className="flex items-start justify-between gap-4 mb-4">
-          <h3 className="font-['Bebas_Neue'] text-2xl md:text-3xl tracking-wide text-white">{reel.title}</h3>
-          <span className={`flex-shrink-0 font-['DM_Sans'] text-xs tracking-widest border px-2 py-1 whitespace-nowrap ${isComingSoon ? "text-white/50 border-white/20" : "text-[#FF0000] border-[#FF0000]/40"}`}>
-            {isComingSoon ? reel.duration : `REEL • ${reel.duration}`}
-          </span>
-        </div>
-        <p className="font-['DM_Sans'] text-sm md:text-base text-white/70 leading-relaxed mb-8">{reel.description}</p>
-      </div>
-      <a href={reel.reelUrl} target="_blank" rel="noopener noreferrer" className="block">
-        <button className={`w-full font-['Bebas_Neue'] text-sm md:text-base tracking-[0.15em] transition-all duration-300 py-3 px-4 border ${isComingSoon ? "text-white/70 border-white/10 hover:border-white/40 hover:text-white" : "text-white border-white/20 hover:border-[#FF0000] hover:text-[#FF0000]"}`}>
-          {isComingSoon ? "FOLLOW FOR THIS DROP →" : "WATCH STRATEGY ON INSTAGRAM →"}
-        </button>
-      </a>
-    </div>
-  );
-};
 
 const ACT = () => {
   return (
@@ -127,7 +108,6 @@ const ACT = () => {
                   </ul>
                 </div>
 
-               
               </div>
             </div>
           </ScrollReveal>
@@ -148,8 +128,13 @@ const ACT = () => {
               </ScrollReveal>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {section.items.map((reel, idx) => (
-                  <ScrollReveal key={reel.title} delay={idx * 100}>
-                    <ReelCard reel={reel} />
+                  <ScrollReveal key={reel.title} delay={idx * 50}>
+                    <Card 
+                      title={reel.title} 
+                      description={reel.description} 
+                      duration={reel.duration} 
+                      socialLinks={reel.socialLinks} 
+                    />
                   </ScrollReveal>
                 ))}
               </div>
@@ -172,8 +157,13 @@ const ACT = () => {
               </ScrollReveal>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {section.items.map((reel, idx) => (
-                  <ScrollReveal key={reel.title} delay={idx * 100}>
-                    <ReelCard reel={reel} />
+                  <ScrollReveal key={reel.title} delay={idx * 50}>
+                    <Card 
+                      title={reel.title} 
+                      description={reel.description} 
+                      duration={reel.duration} 
+                      socialLinks={reel.socialLinks} 
+                    />
                   </ScrollReveal>
                 ))}
               </div>
@@ -182,7 +172,6 @@ const ACT = () => {
         </div>
       </section>
 
-     
       {/* Final CTA */}
       <section className="px-6 md:px-16 py-32 text-center">
         <ScrollReveal>
