@@ -4,7 +4,6 @@ import SectionTitle from "../components/SectionTitle";
 import ScrollReveal from "../components/ScrollReveal";
 import Card from "../components/Card";
 
-// UPDATED: Now supports the new multi-platform links
 interface ReelItem {
   title: string;
   description: string;
@@ -22,28 +21,67 @@ interface SubSection {
   items: ReelItem[];
 }
 
-// Generates a COMING SOON card without socialLinks
-const createPlaceholder = (topic: string): ReelItem[] => [
-  {
-    title: topic,
-    description: `The strategic framework for ${topic}. Video dropping soon. Follow @akaashacademy to stay updated on our latest strategy drops.`,
-    duration: "COMING SOON",
-  }
-];
+// ==========================================
+// 1. ALGEBRA (7 Cards)
+// ==========================================
+const algebraReels: ReelItem[] = Array.from({ length: 7 }, (_, i) => ({
+  title: `Algebra Strategy ${i + 1}`,
+  description: "Add your video description here.",
+  duration: "0:00",
+  socialLinks: { instagram: "", tiktok: "", youtube: "" }
+}));
 
-// 1. SAT MATH SUB-SECTIONS
+// ==========================================
+// 2. ADVANCED MATH (19 Cards)
+// ==========================================
+const advancedMathReels: ReelItem[] = Array.from({ length: 19 }, (_, i) => ({
+  title: `Advanced Math Strategy ${i + 1}`,
+  description: "Add your video description here.",
+  duration: "0:00",
+  socialLinks: { instagram: "", tiktok: "", youtube: "" }
+}));
+
+// ==========================================
+// 3. DATA AND STATISTICS (21 Cards)
+// ==========================================
+const dataStatsReels: ReelItem[] = Array.from({ length: 21 }, (_, i) => ({
+  title: `Data & Stats Strategy ${i + 1}`,
+  description: "Add your video description here.",
+  duration: "0:00",
+  socialLinks: { instagram: "", tiktok: "", youtube: "" }
+}));
+
+// ==========================================
+// 4. GEOMETRY (14 Cards)
+// ==========================================
+const geometryReels: ReelItem[] = Array.from({ length: 14 }, (_, i) => ({
+  title: `Geometry Strategy ${i + 1}`,
+  description: "Add your video description here.",
+  duration: "0:00",
+  socialLinks: { instagram: "", tiktok: "", youtube: "" }
+}));
+
+// ==========================================
+// 5. ACT MATH (17 Cards)
+// ==========================================
+const actMathReels: ReelItem[] = Array.from({ length: 17 }, (_, i) => ({
+  title: `ACT Math Strategy ${i + 1}`,
+  description: "Add your video description here.",
+  duration: "0:00",
+  socialLinks: { instagram: "", tiktok: "", youtube: "" }
+}));
+
+
+// --- SECTION MAPPING ---
 const satMathSections: SubSection[] = [
-  { id: "algebra", title: "Algebra", items: createPlaceholder("Algebra") },
-  { id: "advanced-algebra", title: "Advanced Algebra", items: createPlaceholder("Advanced Algebra") },
-  { id: "problem-solving", title: "Problem Solving & Data", items: createPlaceholder("Problem Solving & Data Analysis") },
-  { id: "geometry", title: "Geometry", items: createPlaceholder("Geometry") },
-  { id: "probability", title: "Probability", items: createPlaceholder("Probability") },
+  { id: "algebra", title: "Algebra", items: algebraReels },
+  { id: "advanced-math", title: "Advanced Math", items: advancedMathReels },
+  { id: "data-statistics", title: "Data and Statistics", items: dataStatsReels },
+  { id: "geometry", title: "Geometry", items: geometryReels },
 ];
 
-// 2. ACT MATH SUB-SECTIONS
 const actMathSections: SubSection[] = [
-  { id: "linear-algebra", title: "Linear Algebra", items: createPlaceholder("Linear Algebra") },
-  { id: "trigonometry", title: "Trigonometry", items: createPlaceholder("Trigonometry") },
+  { id: "act-math", title: "ACT Math Exclusive", items: actMathReels },
 ];
 
 const ACT = () => {
@@ -117,7 +155,7 @@ const ACT = () => {
       {/* SAT Math Sub-sections */}
       <section className="px-6 md:px-16 py-24 border-b border-white/10">
         <div className="mb-16">
-          <SectionTitle title="SAT MATH FRAMEWORKS" subtitle="From algebra fundamentals to probability — master the core patterns." />
+          <SectionTitle title="SAT MATH FRAMEWORKS" subtitle="From algebra fundamentals to geometry — master the core patterns." />
         </div>
 
         <div className="space-y-24">
@@ -128,7 +166,7 @@ const ACT = () => {
               </ScrollReveal>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {section.items.map((reel, idx) => (
-                  <ScrollReveal key={reel.title} delay={idx * 50}>
+                  <ScrollReveal key={idx} delay={(idx % 4) * 50}>
                     <Card 
                       title={reel.title} 
                       description={reel.description} 
@@ -157,7 +195,7 @@ const ACT = () => {
               </ScrollReveal>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {section.items.map((reel, idx) => (
-                  <ScrollReveal key={reel.title} delay={idx * 50}>
+                  <ScrollReveal key={idx} delay={(idx % 4) * 50}>
                     <Card 
                       title={reel.title} 
                       description={reel.description} 
