@@ -42,11 +42,10 @@ const Home = () => {
               <div className="relative w-full pt-[177.78%] rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(255,0,0,0.15)] hover:border-[#FF0000]/40 transition-all duration-500 bg-[#09090b]">
                 <iframe
                   className="absolute top-0 left-0 w-full h-full border-0"
-                  /* 📌 PASTE YOUR 9:16 CANVA EMBED LINK RIGHT HERE */
                   src="https://www.canva.com/design/DAHN695m0SE/ktMcoQvXwD1vZcFpFkHNtQ/watch?embed"
                   allowFullScreen
                   loading="lazy"
-                  title="THE MISSION"
+                  title="The Akaash Method"
                 ></iframe>
               </div>
             </div>
@@ -125,4 +124,13 @@ const Home = () => {
           <p className="font-['DM_Sans'] text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10">
             Daily strategy drops to guarantee your score improves. Follow us on social media.
           </p>
-          <a href="
+          <a href="https://www.instagram.com/akaashacademy/" target="_blank" rel="noopener noreferrer" className="inline-block font-['Bebas_Neue'] text-lg tracking-[0.2em] px-10 py-4 border-2 border-[#FF0000] text-white hover:bg-[#FF0000] hover:scale-105 transition-all duration-300">
+            FOLLOW ON INSTAGRAM
+          </a>
+        </ScrollReveal>
+      </section>
+    </div>
+  );
+};
+
+export default Home;
