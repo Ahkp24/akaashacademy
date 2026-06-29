@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
           </p>
         </div>
 
-        {/* Navigation - REMOVED AKAASH ARENA */}
+        {/* Navigation - UPDATED WITH UNIFIED HUBS */}
         <div>
           <h4 className="font-['Bebas_Neue'] text-lg tracking-wider text-white/40 mb-4">
             NAVIGATE
@@ -26,10 +26,13 @@ const Footer: React.FC = () => {
               <Link to="/" className="hover:text-[#FF0000] transition-colors">Home</Link>
             </li>
             <li>
-              <Link to="/sat" className="hover:text-[#FF0000] transition-colors">SAT</Link>
+              <Link to="/reading" className="hover:text-[#FF0000] transition-colors">Reading / Writing</Link>
             </li>
             <li>
-              <Link to="/act" className="hover:text-[#FF0000] transition-colors">ACT</Link>
+              <Link to="/math" className="hover:text-[#FF0000] transition-colors">Math Hub</Link>
+            </li>
+            <li>
+              <Link to="/tips" className="hover:text-[#FF0000] transition-colors">Tips & Tricks</Link>
             </li>
             <li>
               <Link to="/about" className="hover:text-[#FF0000] transition-colors">About</Link>
@@ -47,10 +50,10 @@ const Footer: React.FC = () => {
               <a href="https://www.instagram.com/akaashacademy/" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF0000] transition-colors">Instagram</a>
             </li>
             <li>
-              <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF0000] transition-colors">TikTok</a>
+              <a href="https://www.tiktok.com/@akaashacademy" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF0000] transition-colors">TikTok</a>
             </li>
             <li>
-              <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF0000] transition-colors">YouTube</a>
+              <a href="https://www.youtube.com/@akaash_academy" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF0000] transition-colors">YouTube</a>
             </li>
           </ul>
         </div>
