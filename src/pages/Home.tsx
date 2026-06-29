@@ -1,198 +1,128 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import Hero from "../components/Hero";
-import SectionTitle from "../components/SectionTitle";
-import Card from "../components/Card";
-
-interface ApproachStep {
-  number: string;
-  title: string;
-  description: string;
-}
-
-interface SubjectItem {
-  title: string;
-  description: string;
-  link: string;
-}
-
-interface ResourceItem {
-  title: string;
-  description: string;
-}
-
-const approachSteps: ApproachStep[] = [
-  {
-    number: "01",
-    title: "Understand the Content",
-    description:
-      "Bite-size videos easily explain rules and methods to solve questions.",
-  },
-  {
-    number: "02",
-    title: "Notice the Pattern",
-    description:
-      "You know what to do now and how to apply content onto the context of the question.",
-  },
-  {
-    number: "03",
-    title: "Avoid Traps",
-    description:
-      "You easily learn common tricks the tests pull on you and how to avoid them.",
-  },
-  {
-    number: "04",
-    title: "Improve Your Score",
-    description:
-      "By the end of just a few small videos and practice questions, your scores can do nothing but improve.",
-  },
-];
-
-const subjects: SubjectItem[] = [
-  {
-    title: "Reading, Writing, and English",
-    description:
-      "Despite knowing the language well, the SAT and ACT trip us up with rules and tricks that make English difficult. But with bite-sized videos and practice, those tricks become so easy to avoid.",
-    link: "/reading",
-  },
-  {
-    title: "Math",
-    description:
-      "The SAT and ACT both cover a large amount of math topics that we easily condense for you to understand the basics and apply them in confusing word problems.",
-    link: "/math",
-  },
-];
-
-const resources: ResourceItem[] = [
-  {
-    title: "Grammar",
-    description:
-      "Break down every grammar rule in about 10 minutes with our reels.",
-  },
-  {
-    title: "Traps",
-    description:
-      "Learn to spot the wrong-answer traps testmakers hide.",
-  },
-  {
-    title: "Tips",
-    description:
-      "Shortcuts and techniques to save you time and guarantee a high score.",
-  },
-];
+import ScrollReveal from "../components/ScrollReveal";
 
 const Home = () => {
   return (
-    <div className="bg-black text-white">
+    <div className="bg-black text-white min-h-screen font-['DM_Sans']">
       <Navbar />
 
-      <Hero
-        title="LEARN IT QUICK, MAKE IT STICK"
-        subtitle="Master SAT and ACT patterns through efficient strategies."
-        ctaText="Start Improving"
-        ctaLink="/reading"
-      />
+      {/* Hero Section */}
+      <section className="px-6 md:px-16 py-24 md:py-32 border-b border-white/10">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+          {/* Left Column: Header and Slogan */}
+          <ScrollReveal>
+            <div className="text-left">
+              <h1 className="font-['Bebas_Neue'] text-6xl md:text-8xl tracking-wide mb-2 glitch-text cursor-default">
+                AKAASH ACADEMY
+              </h1>
+              {/* Slogan */}
+              <p className="font-['Bebas_Neue'] text-2xl md:text-3xl tracking-widest text-[#FF0000] mb-6 uppercase">
+                LEARN IT QUICK. MAKE IT STICK.
+              </p>
+              <p className="font-['DM_Sans'] text-lg md:text-xl text-white/70 leading-relaxed max-w-lg mb-10">
+                Mastering standardized tests through pattern recognition, not raw memorization. Access our complete strategy hubs below.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link to="/reading" className="font-['Bebas_Neue'] text-base md:text-lg tracking-[0.15em] px-8 py-4 border border-[#FF0000] text-white bg-[#FF0000] hover:bg-transparent hover:text-[#FF0000] transition-colors duration-300">
+                  READING & WRITING
+                </Link>
+                <Link to="/math" className="font-['Bebas_Neue'] text-base md:text-lg tracking-[0.15em] px-8 py-4 border border-white/20 text-white hover:border-white transition-colors duration-300">
+                  MATH HUB
+                </Link>
+              </div>
+            </div>
+          </ScrollReveal>
 
-      {/* The Baseline / The Akaash Difference */}
+          {/* Right Column: Portrait 1080x1920 Canva Video Embed */}
+          <ScrollReveal delay={200}>
+            <div className="max-w-[340px] mx-auto w-full">
+              <div className="relative w-full pt-[177.78%] rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(255,0,0,0.15)] hover:border-[#FF0000]/40 transition-all duration-500 bg-[#09090b]">
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full border-0"
+                  /* 📌 PASTE YOUR 9:16 CANVA EMBED LINK RIGHT HERE */
+                  src="https://www.canva.com/design/DAHN695m0SE/ktMcoQvXwD1vZcFpFkHNtQ/watch?embed"
+                  allowFullScreen
+                  loading="lazy"
+                  title="THE MISSION"
+                ></iframe>
+              </div>
+            </div>
+          </ScrollReveal>
+
+        </div>
+      </section>
+
+      {/* Feature Navigation Grid */}
       <section className="px-6 md:px-16 py-24 border-b border-white/10">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
-          <div>
-            <h3 className="font-['Bebas_Neue'] text-3xl md:text-5xl tracking-wide mb-6">
-              THE <span className="text-[#FF0000]">BASELINE</span>
-            </h3>
-            <p className="font-['DM_Sans'] text-lg md:text-xl text-white/80 leading-relaxed">
-              The national average is{" "}
-              <span className="text-white font-semibold">1029</span> on the
-              SAT and{" "}
-              <span className="text-white font-semibold">19.4</span> on the
-              ACT.
-            </p>
+        <div className="max-w-7xl mx-auto">
+          <ScrollReveal>
+            <div className="mb-16">
+              <h2 className="font-['Bebas_Neue'] text-4xl md:text-5xl tracking-wide text-white mb-4">CHOOSE YOUR PATH</h2>
+              <p className="text-white/70 max-w-2xl text-lg">Everything you need to break past your score plateaus.</p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            {/* Reading Card */}
+            <ScrollReveal delay={100}>
+              <Link to="/reading" className="group block h-full">
+                <div className="bg-[#09090b] border border-white/10 group-hover:border-[#FF0000] transition-all duration-300 p-8 h-full flex flex-col justify-between">
+                  <div>
+                    <h3 className="font-['Bebas_Neue'] text-3xl tracking-wide text-white mb-4 group-hover:text-[#FF0000] transition-colors duration-300">READING & WRITING</h3>
+                    <p className="text-white/70 leading-relaxed mb-8">
+                      Stop relying on "feeling" the right answer. Master the 16 grammar rules and reading frameworks.
+                    </p>
+                  </div>
+                  <span className="font-['Bebas_Neue'] text-sm tracking-[0.2em] text-[#FF0000]">ACCESS HUB →</span>
+                </div>
+              </Link>
+            </ScrollReveal>
+
+            {/* Math Card */}
+            <ScrollReveal delay={200}>
+              <Link to="/math" className="group block h-full">
+                <div className="bg-[#09090b] border border-white/10 group-hover:border-[#FF0000] transition-all duration-300 p-8 h-full flex flex-col justify-between">
+                  <div>
+                    <h3 className="font-['Bebas_Neue'] text-3xl tracking-wide text-white mb-4 group-hover:text-[#FF0000] transition-colors duration-300">MATH HUB</h3>
+                    <p className="text-white/70 leading-relaxed mb-8">
+                      From foundational algebra to advanced quantitative logic. Strategy over raw computation.
+                    </p>
+                  </div>
+                  <span className="font-['Bebas_Neue'] text-sm tracking-[0.2em] text-[#FF0000]">ACCESS HUB →</span>
+                </div>
+              </Link>
+            </ScrollReveal>
+
+            {/* Tips Card */}
+            <ScrollReveal delay={300}>
+              <Link to="/tips" className="group block h-full">
+                <div className="bg-[#09090b] border border-white/10 group-hover:border-[#FF0000] transition-all duration-300 p-8 h-full flex flex-col justify-between">
+                  <div>
+                    <h3 className="font-['Bebas_Neue'] text-3xl tracking-wide text-white mb-4 group-hover:text-[#FF0000] transition-colors duration-300">TIPS & TRICKS</h3>
+                    <p className="text-white/70 leading-relaxed mb-8">
+                      Outsmart the test. Swipe through the master deck and learn how to spot wrong answers instantly.
+                    </p>
+                  </div>
+                  <span className="font-['Bebas_Neue'] text-sm tracking-[0.2em] text-[#FF0000]">DECONSTRUCT TRAPS →</span>
+                </div>
+              </Link>
+            </ScrollReveal>
+
           </div>
-          <div>
-            <h3 className="font-['Bebas_Neue'] text-3xl md:text-5xl tracking-wide mb-6">
-              THE AKAASH <span className="text-[#FF0000]">DIFFERENCE</span>
-            </h3>
-            <p className="font-['DM_Sans'] text-lg md:text-xl text-white/80 leading-relaxed">
-              Most standard prep treats these tests as academic and wants you to match or go above that baseline. 
-              But we want you to not only go above the average, but absolutely demolish it with
-              thorough understanding and tips that will remain with you every time you take a test.
-            </p>
-          </div>
         </div>
       </section>
 
-      {/* The Akaash Approach */}
-      <section className="px-6 md:px-16 py-24">
-        <SectionTitle
-          title="THE AKAASH APPROACH"
-          subtitle="Focused on content and EDUCATED tips, not guessing."
-        />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
-          {approachSteps.map((step) => (
-            <Card
-              key={step.number}
-              title={step.title}
-              description={step.description}
-              number={step.number}
-            />
-          ))}
-        </div>
-      </section>
-
-      {/* Subjects */}
-      <section className="px-6 md:px-16 py-24 bg-white/[0.02] border-t border-b border-white/10">
-        <SectionTitle
-          title="CHOOSE YOUR PATH"
-          subtitle="Strategy-built programs for every test."
-        />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
-          {subjects.map((subject) => (
-            <Card
-              key={subject.title}
-              title={subject.title}
-              description={subject.description}
-              link={subject.link}
-            />
-          ))}
-        </div>
-      </section>
-
-      {/* Free Resources */}
-      <section className="px-6 md:px-16 py-24">
-        <SectionTitle
-          title="FREE RESOURCES"
-          subtitle="Akaash Academy's key to success will remain free forever, unlike other prep resources."
-        />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
-          {resources.map((resource) => (
-            <Card
-              key={resource.title}
-              title={resource.title}
-              description={resource.description}
-            />
-          ))}
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="px-6 md:px-16 py-32 text-center border-t border-white/10">
-        <h2 className="font-['Bebas_Neue'] text-5xl md:text-7xl tracking-wide mb-6">
-          READY TO <span className="text-[#FF0000]">IMPROVE</span>?
-        </h2>
-        <p className="font-['DM_Sans'] text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10">
-          Join Akaash Academy and get your scores up today!
-        </p>
-        <Link
-          to="/reading"
-          className="inline-block font-['Bebas_Neue'] text-lg tracking-[0.2em] px-10 py-4 border-2 border-[#FF0000] text-white hover:bg-[#FF0000] transition-colors duration-300"
-        >
-          START IMPROVING
-        </Link>
-      </section>
-
-    </div>
-  );
-};
-
-export default Home;
+      {/* Final Call to Action */}
+      <section className="px-6 md:px-16 py-32 text-center bg-white/[0.02]">
+        <ScrollReveal>
+          <h2 className="font-['Bebas_Neue'] text-5xl md:text-7xl tracking-wide mb-6">
+            JOIN THE <span className="text-[#FF0000]">ACADEMY</span>
+          </h2>
+          <p className="font-['DM_Sans'] text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10">
+            Daily strategy drops to guarantee your score improves. Follow us on social media.
+          </p>
+          <a href="
