@@ -3,19 +3,19 @@ import ScrollReveal from "./ScrollReveal";
 
 interface SectionTitleProps {
   title: string;
-  subtitle?: string; // The question mark makes it optional so it never errors
+  subtitle?: string; // <-- We just added this optional prop!
 }
 
 const SectionTitle: React.FC<SectionTitleProps> = ({ title, subtitle }) => {
   return (
     <ScrollReveal>
-      <div className="text-left max-w-3xl">
-        {/* ADDED: glitch-text class */}
-        <h2 className="font-['Bebas_Neue'] text-4xl md:text-6xl tracking-wide text-white mb-3 glitch-text cursor-default">
+      <div className="mb-12">
+        <h2 className="font-['Bebas_Neue'] text-4xl md:text-5xl tracking-wide text-white mb-4 uppercase">
           {title}
         </h2>
+        {/* If a subtitle is passed, render it! */}
         {subtitle && (
-          <p className="font-['DM_Sans'] text-base md:text-lg text-white/50 leading-relaxed">
+          <p className="font-['DM_Sans'] text-white/70 max-w-2xl text-lg">
             {subtitle}
           </p>
         )}
