@@ -23,14 +23,14 @@ const Home = () => {
                 LEARN IT QUICK. MAKE IT STICK.
               </p>
               <p className="font-['DM_Sans'] text-lg md:text-xl text-white/70 leading-relaxed max-w-lg mb-10">
-                Mastering standardized tests through pattern recognition, not raw memorization. Access our complete strategy hubs below.
+                COOK the SAT and ACT with learning HOW TO APPLY tips, strategies, and content quickly rather than just memorizing.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link to="/reading" className="font-['Bebas_Neue'] text-base md:text-lg tracking-[0.15em] px-8 py-4 border border-[#FF0000] text-white bg-[#FF0000] hover:bg-transparent hover:text-[#FF0000] transition-colors duration-300">
                   READING & WRITING
                 </Link>
                 <Link to="/math" className="font-['Bebas_Neue'] text-base md:text-lg tracking-[0.15em] px-8 py-4 border border-white/20 text-white hover:border-white transition-colors duration-300">
-                  MATH HUB
+                  MATH
                 </Link>
               </div>
             </div>
@@ -60,7 +60,7 @@ const Home = () => {
           <ScrollReveal>
             <div className="mb-16">
               <h2 className="font-['Bebas_Neue'] text-4xl md:text-5xl tracking-wide text-white mb-4">CHOOSE YOUR PATH</h2>
-              <p className="text-white/70 max-w-2xl text-lg">Everything you need to break past your score plateaus.</p>
+              <p className="text-white/70 max-w-2xl text-lg">Stuck on a score? Here's what you need to get past it.</p>
             </div>
           </ScrollReveal>
 
@@ -73,7 +73,7 @@ const Home = () => {
                   <div>
                     <h3 className="font-['Bebas_Neue'] text-3xl tracking-wide text-white mb-4 group-hover:text-[#FF0000] transition-colors duration-300">READING & WRITING</h3>
                     <p className="text-white/70 leading-relaxed mb-8">
-                      Stop relying on "feeling" the right answer. Master the 16 grammar rules and reading frameworks.
+                      In just 10 minutes you can learn ALL of Standard English Grammar!
                     </p>
                   </div>
                   <span className="font-['Bebas_Neue'] text-sm tracking-[0.2em] text-[#FF0000]">ACCESS HUB →</span>
@@ -88,7 +88,7 @@ const Home = () => {
                   <div>
                     <h3 className="font-['Bebas_Neue'] text-3xl tracking-wide text-white mb-4 group-hover:text-[#FF0000] transition-colors duration-300">MATH HUB</h3>
                     <p className="text-white/70 leading-relaxed mb-8">
-                      From foundational algebra to advanced quantitative logic. Strategy over raw computation.
+                      From algebra to trigonometry, learn all the math on both the SAT and ACT with real practice problems and applying tricks.
                     </p>
                   </div>
                   <span className="font-['Bebas_Neue'] text-sm tracking-[0.2em] text-[#FF0000]">ACCESS HUB →</span>
@@ -103,7 +103,7 @@ const Home = () => {
                   <div>
                     <h3 className="font-['Bebas_Neue'] text-3xl tracking-wide text-white mb-4 group-hover:text-[#FF0000] transition-colors duration-300">TIPS & TRICKS</h3>
                     <p className="text-white/70 leading-relaxed mb-8">
-                      Outsmart the test. Swipe through the master deck and learn how to spot wrong answers instantly.
+                      The tests are like videogames – we have the cheat codes to beat them.
                     </p>
                   </div>
                   <span className="font-['Bebas_Neue'] text-sm tracking-[0.2em] text-[#FF0000]">DECONSTRUCT TRAPS →</span>
@@ -122,7 +122,7 @@ const Home = () => {
             JOIN THE <span className="text-[#FF0000]">ACADEMY</span>
           </h2>
           <p className="font-['DM_Sans'] text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10">
-            Daily strategy drops to guarantee your score improves. Follow us on social media.
+            Follow us on social media.
           </p>
           <a href="https://www.instagram.com/akaashacademy/" target="_blank" rel="noopener noreferrer" className="inline-block font-['Bebas_Neue'] text-lg tracking-[0.2em] px-10 py-4 border-2 border-[#FF0000] text-white hover:bg-[#FF0000] hover:scale-105 transition-all duration-300">
             FOLLOW ON INSTAGRAM
