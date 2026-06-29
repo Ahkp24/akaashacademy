@@ -44,6 +44,7 @@ const Card: React.FC<CardProps> = ({ title, description, number, link, duration,
   useEffect(() => {
     const cardElement = cardRef.current;
     if (cardElement) {
+      // @ts-ignore - Tells TypeScript to stop stressing over VanillaTilt's strict types
       VanillaTilt.init(cardElement, {
         max: 10,
         speed: 400,
